@@ -36,7 +36,7 @@ export default function ChatBot() {
                         exit={{ opacity: 0, y: 8, scale: 0.95 }}
                         className="fixed bottom-[90px] right-3 sm:right-6 z-[61] bg-white text-[oklch(0.15_0.02_280)] rounded-xl px-4 py-3 shadow-xl max-w-[220px] sm:max-w-[200px]"
                     >
-                        <button onClick={dismissTooltip} className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-white/90 shadow flex items-center justify-center text-black/50 hover:text-black">
+                        <button onClick={dismissTooltip} className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[var(--color-bg-card)] shadow flex items-center justify-center text-black/50 hover:text-black">
                             <X className="w-3 h-3" />
                         </button>
                         <p className="text-[12px] font-medium leading-snug">

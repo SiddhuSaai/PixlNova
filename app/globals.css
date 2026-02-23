@@ -105,50 +105,50 @@
 
 /* ── Light Theme Overrides ── */
 [data-theme="light"] {
-  --color-bg-primary: oklch(0.97 0.003 280);
-  --color-bg-secondary: oklch(0.95 0.005 280);
+  --color-bg-primary: oklch(0.97 0.003 270);
+  --color-bg-secondary: oklch(0.94 0.006 270);
   --color-bg-card: oklch(1.00 0 0);
-  --color-bg-card-hover: oklch(0.97 0.004 280);
-  --color-bg-elevated: oklch(0.99 0.002 280);
+  --color-bg-card-hover: oklch(0.96 0.005 270);
+  --color-bg-elevated: oklch(0.99 0.002 270);
 
-  --color-border: oklch(0.82 0.008 280 / 0.5);
-  --color-border-hover: oklch(0.55 0.15 285 / 0.4);
-  --color-border-focus: oklch(0.55 0.20 285);
+  --color-border: oklch(0.78 0.01 270 / 0.6);
+  --color-border-hover: oklch(0.50 0.18 285 / 0.5);
+  --color-border-focus: oklch(0.50 0.22 285);
 
-  --color-text-primary: oklch(0.15 0.02 280);
-  --color-text-secondary: oklch(0.40 0.02 265);
-  --color-text-muted: oklch(0.55 0.015 265);
+  --color-text-primary: oklch(0.13 0.02 280);
+  --color-text-secondary: oklch(0.35 0.02 265);
+  --color-text-muted: oklch(0.48 0.015 265);
 
-  /* Overlays invert: black-based for light theme */
-  --overlay-2: oklch(0 0 0 / 0.02);
-  --overlay-3: oklch(0 0 0 / 0.03);
-  --overlay-4: oklch(0 0 0 / 0.04);
-  --overlay-5: oklch(0 0 0 / 0.05);
-  --overlay-6: oklch(0 0 0 / 0.06);
-  --overlay-8: oklch(0 0 0 / 0.08);
-  --overlay-10: oklch(0 0 0 / 0.10);
-  --overlay-12: oklch(0 0 0 / 0.12);
-  --overlay-15: oklch(0 0 0 / 0.15);
-  --overlay-20: oklch(0 0 0 / 0.20);
-  --overlay-25: oklch(0 0 0 / 0.25);
-  --overlay-30: oklch(0 0 0 / 0.30);
-  --overlay-35: oklch(0 0 0 / 0.35);
-  --overlay-40: oklch(0 0 0 / 0.40);
-  --overlay-45: oklch(0 0 0 / 0.45);
-  --overlay-50: oklch(0 0 0 / 0.50);
-  --overlay-60: oklch(0 0 0 / 0.60);
-  --overlay-70: oklch(0 0 0 / 0.70);
-  --overlay-80: oklch(0 0 0 / 0.80);
-  --overlay-85: oklch(0 0 0 / 0.85);
+  /* Overlays: BOOSTED for light mode (2-3x dark mode equivalents) */
+  --overlay-2: oklch(0 0 0 / 0.04);
+  --overlay-3: oklch(0 0 0 / 0.06);
+  --overlay-4: oklch(0 0 0 / 0.07);
+  --overlay-5: oklch(0 0 0 / 0.08);
+  --overlay-6: oklch(0 0 0 / 0.10);
+  --overlay-8: oklch(0 0 0 / 0.12);
+  --overlay-10: oklch(0 0 0 / 0.14);
+  --overlay-12: oklch(0 0 0 / 0.18);
+  --overlay-15: oklch(0 0 0 / 0.20);
+  --overlay-20: oklch(0 0 0 / 0.30);
+  --overlay-25: oklch(0 0 0 / 0.35);
+  --overlay-30: oklch(0 0 0 / 0.40);
+  --overlay-35: oklch(0 0 0 / 0.45);
+  --overlay-40: oklch(0 0 0 / 0.50);
+  --overlay-45: oklch(0 0 0 / 0.55);
+  --overlay-50: oklch(0 0 0 / 0.60);
+  --overlay-60: oklch(0 0 0 / 0.70);
+  --overlay-70: oklch(0 0 0 / 0.75);
+  --overlay-80: oklch(0 0 0 / 0.85);
+  --overlay-85: oklch(0 0 0 / 0.90);
 
   --gradient-hero: radial-gradient(ellipse 80% 50% at 50% -20%, oklch(0.80 0.10 285 / 0.15), transparent);
   --gradient-card-hover: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
       oklch(0.55 0.25 285 / 0.06),
       transparent 40%);
 
-  --shadow-glow: 0 0 60px -15px oklch(0.55 0.25 285 / 0.15);
-  --shadow-card: 0 2px 16px -4px oklch(0 0 0 / 0.06);
-  --shadow-elevated: 0 8px 32px -4px oklch(0 0 0 / 0.08);
+  --shadow-glow: 0 0 60px -15px oklch(0.55 0.25 285 / 0.12);
+  --shadow-card: 0 2px 12px -2px oklch(0 0 0 / 0.08), 0 1px 3px oklch(0 0 0 / 0.04);
+  --shadow-elevated: 0 8px 32px -4px oklch(0 0 0 / 0.10), 0 2px 8px oklch(0 0 0 / 0.04);
 }
 
 /* ── Base Styles ── */

@@ -92,7 +92,7 @@ export default function Footer() {
                                     href={link.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-8 h-8 rounded-lg border border-[var(--overlay-4)] bg-white/[0.015] flex items-center justify-center text-[var(--overlay-15)] hover:text-[var(--overlay-50)] hover:border-white/[0.1] hover:bg-[var(--overlay-3)] transition-all duration-300"
+                                    className="w-8 h-8 rounded-lg border border-[var(--overlay-4)] bg-[var(--overlay-3)] flex items-center justify-center text-[var(--overlay-15)] hover:text-[var(--overlay-50)] hover:border-[var(--overlay-10)] hover:bg-[var(--overlay-3)] transition-all duration-300"
                                     aria-label={link.label}
                                 >
                                     {socialIcons[link.icon] || <ArrowUpRight className="w-3.5 h-3.5" />}

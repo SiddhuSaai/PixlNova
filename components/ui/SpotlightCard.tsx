@@ -24,7 +24,7 @@ export function SpotlightCard({ children, className = "" }: SpotlightCardProps) 
             onMouseMove={handleMouse}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className={`relative overflow-hidden rounded-2xl border border-white/10 bg-[var(--overlay-3)] card-hover ${className}`}
+            className={`relative overflow-hidden rounded-2xl border border-[var(--overlay-10)] bg-[var(--overlay-3)] card-hover ${className}`}
             style={{
                 background: isHovered
                     ? `radial-gradient(600px circle at ${coords.x}px ${coords.y}px, rgba(124,58,237,0.15), transparent 40%)`

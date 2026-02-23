@@ -176,7 +176,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                                     </div>
                                 ))}
                             </div>
-                            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-[var(--color-text-primary)] text-[12px] font-medium">
+                            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-[var(--overlay-10)] text-[var(--color-text-primary)] text-[12px] font-medium">
                                 <ExternalLink className="w-3 h-3" />
                                 View Case Study
                             </div>
@@ -258,7 +258,7 @@ function TestimonialStrip({ project }: { project: Project }) {
             viewport={{ once: true }}
             className="col-span-full"
         >
-            <div className="rounded-xl border border-[var(--overlay-4)] bg-white/[0.01] p-5 sm:p-6 flex gap-4 items-start">
+            <div className="rounded-xl border border-[var(--overlay-4)] bg-[var(--overlay-3)] p-5 sm:p-6 flex gap-4 items-start">
                 <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 bg-[var(--overlay-3)] border border-[var(--overlay-6)]">
                     <Quote className="w-3.5 h-3.5 text-[var(--overlay-15)]" />
                 </div>

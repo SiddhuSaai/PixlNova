@@ -137,7 +137,7 @@ export default function FAQ() {
                                                 <div
                                                     key={faq.question}
                                                     className={`rounded-xl border overflow-hidden transition-all duration-400 ${isOpen
-                                                        ? "border-white/[0.1] bg-white/[0.025]"
+                                                        ? "border-white/[0.1] bg-[var(--overlay-4)]"
                                                         : "border-[var(--overlay-4)] bg-transparent hover:border-[var(--overlay-8)]"
                                                         }`}
                                                 >

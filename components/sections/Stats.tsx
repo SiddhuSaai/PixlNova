@@ -119,7 +119,7 @@ export default function Stats() {
 
                                 {/* Content */}
                                 <div
-                                    className="relative h-full flex flex-col items-center justify-center text-center p-6 lg:p-8 rounded-2xl border border-[var(--overlay-6)] bg-[oklch(0.10_0.015_280)] group-hover:bg-[oklch(0.12_0.02_280)] transition-all duration-500"
+                                    className="relative h-full flex flex-col items-center justify-center text-center p-6 lg:p-8 rounded-2xl border border-[var(--overlay-6)] bg-[var(--color-bg-card)] group-hover:bg-[var(--color-bg-card-hover)] transition-all duration-500"
                                 >
                                     {/* Hover glow behind icon */}
                                     <div

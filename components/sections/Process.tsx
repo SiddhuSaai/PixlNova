@@ -278,7 +278,7 @@ export default function Process() {
                                     <div
                                         className={`relative rounded-xl border overflow-hidden transition-all duration-300 ${active === i
                                             ? "border-[var(--overlay-12)] bg-[var(--overlay-3)]"
-                                            : "border-[var(--overlay-6)] bg-white/[0.01]"
+                                            : "border-[var(--overlay-6)] bg-[var(--overlay-3)]"
                                             }`}
                                         style={active === i ? { boxShadow: `0 0 40px -12px ${step.glow}` } : {}}
                                     >

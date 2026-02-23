@@ -103,7 +103,7 @@ export default function Contact() {
                                     </div>
                                 </motion.div>
                             ) : (
-                                <form onSubmit={handleSubmit} className="rounded-2xl border border-[var(--overlay-6)] bg-white/[0.015] overflow-hidden">
+                                <form onSubmit={handleSubmit} className="rounded-2xl border border-[var(--overlay-6)] bg-[var(--overlay-3)] overflow-hidden">
                                     {/* ── Progress bar ── */}
                                     <div className="px-6 pt-6 sm:px-8 sm:pt-7">
                                         <div className="flex items-center gap-3 mb-2">
@@ -295,7 +295,7 @@ export default function Contact() {
 
                                                     {/* Summary preview */}
                                                     {(formData.name || formData.service) && (
-                                                        <div className="rounded-xl border border-[var(--overlay-4)] bg-white/[0.015] p-4">
+                                                        <div className="rounded-xl border border-[var(--overlay-4)] bg-[var(--overlay-3)] p-4">
                                                             <div className="text-[10px] text-[var(--overlay-15)] uppercase tracking-widest font-medium mb-2">Submission Summary</div>
                                                             <div className="grid grid-cols-2 gap-2 text-[11px]">
                                                                 {formData.name && (
@@ -366,7 +366,7 @@ export default function Contact() {
                             ].map((item) => (
                                 <div
                                     key={item.title}
-                                    className="group rounded-xl border border-[var(--overlay-4)] bg-white/[0.015] p-4 hover:border-[var(--overlay-8)] transition-all duration-300"
+                                    className="group rounded-xl border border-[var(--overlay-4)] bg-[var(--overlay-3)] p-4 hover:border-[var(--overlay-8)] transition-all duration-300"
                                 >
                                     <div className="flex items-start gap-3">
                                         <div
@@ -387,7 +387,7 @@ export default function Contact() {
                             ))}
 
                             {/* Trust signals */}
-                            <div className="rounded-xl border border-[var(--overlay-4)] bg-white/[0.015] p-4 space-y-2.5">
+                            <div className="rounded-xl border border-[var(--overlay-4)] bg-[var(--overlay-3)] p-4 space-y-2.5">
                                 <div className="text-[10px] text-[var(--overlay-15)] uppercase tracking-widest font-medium mb-2">Why Us</div>
                                 {[
                                     { icon: Shield, text: "NDA signed before every project" },

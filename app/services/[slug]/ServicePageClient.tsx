@@ -164,7 +164,7 @@ export default function ServicePageClient({ service }: { service: Service }) {
                             {service.tags.map((tag) => (
                                 <span
                                     key={tag}
-                                    className="px-2.5 py-1 text-[10px] font-mono tracking-widest uppercase rounded-md border border-[var(--overlay-4)] bg-white/[0.015] text-[var(--overlay-20)]"
+                                    className="px-2.5 py-1 text-[10px] font-mono tracking-widest uppercase rounded-md border border-[var(--overlay-4)] bg-[var(--overlay-3)] text-[var(--overlay-20)]"
                                 >
                                     {tag}
                                 </span>
@@ -231,7 +231,7 @@ export default function ServicePageClient({ service }: { service: Service }) {
                             <motion.div
                                 key={feature.title}
                                 variants={fadeUp}
-                                className="group relative rounded-xl p-5 lg:p-6 border border-[var(--overlay-4)] bg-white/[0.015] hover:bg-white/[0.025] hover:border-[var(--overlay-8)] transition-all duration-500"
+                                className="group relative rounded-xl p-5 lg:p-6 border border-[var(--overlay-4)] bg-[var(--overlay-3)] hover:bg-[var(--overlay-4)] hover:border-[var(--overlay-8)] transition-all duration-500"
                             >
                                 <div
                                     className="absolute -inset-[1px] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10 blur-[1px]"
@@ -324,7 +324,7 @@ export default function ServicePageClient({ service }: { service: Service }) {
                                 <motion.div
                                     key={item.title}
                                     variants={fadeUp}
-                                    className="rounded-xl border border-[var(--overlay-4)] bg-white/[0.015] p-5 hover:bg-white/[0.025] hover:border-[var(--overlay-8)] transition-all duration-400"
+                                    className="rounded-xl border border-[var(--overlay-4)] bg-[var(--overlay-3)] p-5 hover:bg-[var(--overlay-4)] hover:border-[var(--overlay-8)] transition-all duration-400"
                                 >
                                     <div
                                         className="w-8 h-8 rounded-lg flex items-center justify-center mb-3"
@@ -414,7 +414,7 @@ export default function ServicePageClient({ service }: { service: Service }) {
                             initial={{ opacity: 0, y: 8 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.3 }}
-                            className="rounded-xl border border-[var(--overlay-6)] bg-white/[0.015] p-6 sm:p-8"
+                            className="rounded-xl border border-[var(--overlay-6)] bg-[var(--overlay-3)] p-6 sm:p-8"
                         >
                             <div className="flex items-start gap-4">
                                 <div
@@ -484,7 +484,7 @@ export default function ServicePageClient({ service }: { service: Service }) {
                                 key={tech}
                                 variants={scaleIn}
                                 whileHover={{ scale: 1.06, y: -2 }}
-                                className="group px-4 py-2 rounded-lg border border-[var(--overlay-4)] bg-white/[0.015] hover:border-[var(--overlay-12)] transition-all duration-300 cursor-default"
+                                className="group px-4 py-2 rounded-lg border border-[var(--overlay-4)] bg-[var(--overlay-3)] hover:border-[var(--overlay-12)] transition-all duration-300 cursor-default"
                                 style={{ boxShadow: "none" }}
                                 onMouseEnter={(e) => {
                                     (e.currentTarget as HTMLElement).style.boxShadow = `0 0 20px color-mix(in oklch, ${service.accentColor}, transparent 80%)`
@@ -532,7 +532,7 @@ export default function ServicePageClient({ service }: { service: Service }) {
                             <motion.div
                                 key={item.label}
                                 variants={fadeUp}
-                                className="rounded-xl border border-[var(--overlay-4)] bg-white/[0.015] p-5 text-center hover:bg-white/[0.025] transition-all"
+                                className="rounded-xl border border-[var(--overlay-4)] bg-[var(--overlay-3)] p-5 text-center hover:bg-[var(--overlay-4)] transition-all"
                             >
                                 <div
                                     className="w-10 h-10 rounded-xl mx-auto flex items-center justify-center mb-3"
@@ -589,7 +589,7 @@ export default function ServicePageClient({ service }: { service: Service }) {
                                 <motion.div
                                     key={feature}
                                     variants={fadeUp}
-                                    className="flex items-center gap-3 p-3.5 rounded-xl border border-[var(--overlay-4)] bg-white/[0.015] hover:bg-white/[0.025] transition-all"
+                                    className="flex items-center gap-3 p-3.5 rounded-xl border border-[var(--overlay-4)] bg-[var(--overlay-3)] hover:bg-[var(--overlay-4)] transition-all"
                                 >
                                     <div
                                         className="w-5 h-5 rounded-full flex items-center justify-center shrink-0"

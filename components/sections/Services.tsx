@@ -73,7 +73,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
                     onMouseMove={handleMouse}
                     onMouseLeave={resetMouse}
                     style={{ rotateX, rotateY, transformPerspective: 800 }}
-                    className={`group relative h-full rounded-2xl border border-[var(--overlay-6)] overflow-hidden cursor-pointer transition-all duration-500 hover:border-white/[0.15] ${glow}`}
+                    className={`group relative h-full rounded-2xl border border-[var(--overlay-6)] overflow-hidden cursor-pointer transition-all duration-500 hover:border-[var(--overlay-15)] ${glow}`}
                 >
                     {/* ── Background image ── */}
                     <div className="absolute inset-0 z-0">
@@ -93,7 +93,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
                         {/* Top: icon + hover arrow */}
                         <div className="flex items-start justify-between mb-5">
                             <div
-                                className="w-11 h-11 rounded-xl flex items-center justify-center border border-[var(--overlay-8)] bg-[var(--overlay-4)] backdrop-blur-sm group-hover:border-white/[0.18] group-hover:bg-[var(--overlay-6)] group-hover:scale-105 transition-all duration-300"
+                                className="w-11 h-11 rounded-xl flex items-center justify-center border border-[var(--overlay-8)] bg-[var(--overlay-4)] backdrop-blur-sm group-hover:border-[var(--overlay-15)] group-hover:bg-[var(--overlay-6)] group-hover:scale-105 transition-all duration-300"
                                 style={{ color: service.accentColor }}
                             >
                                 {Icon && <Icon className="w-5 h-5" />}

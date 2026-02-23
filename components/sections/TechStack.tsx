@@ -208,7 +208,7 @@ export default function TechStack() {
                                                 className="object-cover opacity-40"
                                                 sizes="(max-width: 1024px) 100vw, 1024px"
                                             />
-                                            <div className="absolute inset-0 bg-[oklch(0.06_0.01_280)/75%]" />
+                                            <div className="absolute inset-0 bg-[var(--color-bg-primary)/75%]" />
                                             <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.06_0.01_280)/95%] via-[oklch(0.06_0.01_280)/70%] to-[oklch(0.06_0.01_280)/50%]" />
                                         </>
                                     ) : (
@@ -268,7 +268,7 @@ export default function TechStack() {
                                             initial={{ opacity: 0, y: 12 }}
                                             animate={{ opacity: 1, y: 0 }}
                                             transition={{ duration: 0.3, delay: i * 0.05 }}
-                                            className="group relative rounded-xl border border-[var(--overlay-6)] bg-white/[0.015] p-5 hover:bg-[var(--overlay-3)] hover:border-[var(--overlay-12)] transition-all duration-400"
+                                            className="group relative rounded-xl border border-[var(--overlay-6)] bg-[var(--overlay-3)] p-5 hover:bg-[var(--overlay-3)] hover:border-[var(--overlay-12)] transition-all duration-400"
                                             style={{
                                                 // @ts-expect-error: CSS custom property
                                                 "--card-glow": `${current.color}10`,

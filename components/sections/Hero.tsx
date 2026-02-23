@@ -312,11 +312,11 @@ export default function Hero() {
                     className="flex flex-col items-center gap-1.5"
                 >
                     <span className="text-[9px] uppercase tracking-[0.2em] text-[var(--overlay-20)] font-medium">Scroll</span>
-                    <div className="w-4 h-7 rounded-full border border-white/[0.1] flex justify-center pt-1.5">
+                    <div className="w-4 h-7 rounded-full border border-[var(--overlay-10)] flex justify-center pt-1.5">
                         <motion.div
                             animate={{ y: [0, 6, 0], opacity: [1, 0.3, 1] }}
                             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                            className="w-0.5 h-1.5 rounded-full bg-white/30"
+                            className="w-0.5 h-1.5 rounded-full bg-[var(--overlay-30)]"
                         />
                     </div>
                 </motion.div>

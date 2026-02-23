@@ -15,7 +15,7 @@ export default function CTA() {
     return (
         <section className="py-10 relative overflow-hidden">
             {/* ── Layered backgrounds ── */}
-            <div className="absolute inset-0 bg-[oklch(0.06_0.01_280)]" />
+            <div className="absolute inset-0 bg-[var(--color-bg-secondary)]" />
             {/* Grid pattern */}
             <div
                 className="absolute inset-0 opacity-[0.02]"
@@ -78,7 +78,7 @@ export default function CTA() {
                         </MagneticButton>
                         <a
                             href="#contact"
-                            className="inline-flex items-center gap-2 px-6 py-3.5 text-[14px] font-medium text-[var(--overlay-40)] hover:text-[var(--overlay-70)] transition-all duration-300 rounded-full border border-[var(--overlay-6)] hover:border-white/[0.15] hover:bg-[var(--overlay-3)]"
+                            className="inline-flex items-center gap-2 px-6 py-3.5 text-[14px] font-medium text-[var(--overlay-40)] hover:text-[var(--overlay-70)] transition-all duration-300 rounded-full border border-[var(--overlay-6)] hover:border-[var(--overlay-15)] hover:bg-[var(--overlay-3)]"
                         >
                             <Calendar className="w-4 h-4" />
                             Schedule a Free Call

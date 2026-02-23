@@ -225,7 +225,7 @@ function StreamingText({ text, onComplete }: { text: string; onComplete?: () => 
                 {partial}
             </ReactMarkdown>
             {visibleCount < words.length && (
-                <span className="inline-block w-[2px] h-[14px] bg-white/40 animate-pulse ml-0.5 align-middle" />
+                <span className="inline-block w-[2px] h-[14px] bg-[var(--overlay-40)] animate-pulse ml-0.5 align-middle" />
             )}
         </div>
     )
@@ -312,7 +312,7 @@ export default function ChatPage() {
     return (
         <div className="h-dvh flex bg-[var(--color-bg-primary)] text-[var(--color-text-primary)] overflow-hidden">
             {/* ═══════════ SIDEBAR ═══════════ */}
-            <aside className="hidden lg:flex w-[280px] shrink-0 flex-col border-r border-[var(--overlay-6)] bg-[oklch(0.07_0.01_280)]">
+            <aside className="hidden lg:flex w-[280px] shrink-0 flex-col border-r border-[var(--overlay-6)] bg-[var(--color-bg-secondary)]">
                 {/* Logo */}
                 <div className="px-5 py-5 border-b border-[var(--overlay-6)]">
                     <Link href="/" className="flex items-center gap-2.5 group">
@@ -362,7 +362,7 @@ export default function ChatPage() {
             {/* ═══════════ MAIN ═══════════ */}
             <div className="flex-1 flex flex-col min-w-0">
                 {/* Header */}
-                <header className="shrink-0 flex items-center justify-between px-5 sm:px-8 py-4 border-b border-[var(--overlay-6)] bg-[oklch(0.07_0.01_280)]">
+                <header className="shrink-0 flex items-center justify-between px-5 sm:px-8 py-4 border-b border-[var(--overlay-6)] bg-[var(--color-bg-secondary)]">
                     <div className="flex items-center gap-3">
                         <Link href="/" className="lg:hidden flex items-center gap-2 text-[var(--overlay-40)] hover:text-[var(--overlay-70)] transition-colors mr-2">
                             <ArrowLeft className="w-4 h-4" />
@@ -435,7 +435,7 @@ export default function ChatPage() {
                                 {[0, 1, 2].map((i) => (
                                     <motion.span
                                         key={i}
-                                        className="w-[6px] h-[6px] rounded-full bg-white/20"
+                                        className="w-[6px] h-[6px] rounded-full bg-[var(--overlay-20)]"
                                         animate={{ y: [0, -5, 0] }}
                                         transition={{ duration: 0.55, repeat: Infinity, delay: i * 0.15 }}
                                     />
@@ -478,7 +478,7 @@ export default function ChatPage() {
                 {/* Input Area — floating, no bg */}
                 <div className="shrink-0 px-5 sm:px-8 pb-4 pt-2 -mt-28 relative z-10" style={{ background: 'linear-gradient(to top, var(--color-bg-primary) 60%, transparent)' }}>
                     <form onSubmit={handleSubmit} className="max-w-3xl mx-auto">
-                        <div className="rounded-2xl border border-[var(--overlay-8)] bg-[oklch(0.10_0.01_280)] backdrop-blur-xl overflow-hidden">
+                        <div className="rounded-2xl border border-[var(--overlay-8)] bg-[var(--color-bg-card)] backdrop-blur-xl overflow-hidden">
                             {/* Textarea row */}
                             <div className="px-4 pt-3 pb-1">
                                 <textarea

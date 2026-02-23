@@ -428,7 +428,7 @@ export default function Pricing() {
                                         key={plan.key}
                                         className={`group relative rounded-2xl overflow-hidden border transition-all duration-500 ${plan.popular
                                             ? "border-[var(--overlay-12)] bg-[var(--overlay-3)] md:scale-[1.03] shadow-[0_0_60px_-12px_rgba(139,92,246,0.15)]"
-                                            : "border-[var(--overlay-6)] bg-white/[0.01] hover:border-white/[0.1]"
+                                            : "border-[var(--overlay-6)] bg-[var(--overlay-3)] hover:border-[var(--overlay-10)]"
                                             }`}
                                     >
                                         {/* Popular ribbon */}
@@ -484,7 +484,7 @@ export default function Pricing() {
                                                 href="#contact"
                                                 className={`flex items-center justify-center gap-2 w-full py-3 rounded-xl text-[13px] font-semibold transition-all duration-300 ${plan.popular
                                                     ? "bg-gradient-to-r from-[var(--color-brand-500)] to-[oklch(0.65_0.22_280)] text-[var(--color-text-primary)] hover:shadow-[0_4px_24px_-4px_rgba(139,92,246,0.4)] hover:-translate-y-0.5"
-                                                    : "border border-[var(--overlay-8)] text-[var(--overlay-60)] hover:text-[var(--color-text-primary)] hover:bg-[var(--overlay-4)] hover:border-white/[0.15]"
+                                                    : "border border-[var(--overlay-8)] text-[var(--overlay-60)] hover:text-[var(--color-text-primary)] hover:bg-[var(--overlay-4)] hover:border-[var(--overlay-15)]"
                                                     }`}
                                             >
                                                 {plan.cta}

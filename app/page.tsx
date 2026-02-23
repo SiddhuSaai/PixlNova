@@ -18,7 +18,7 @@ const Contact = dynamic(() => import("@/components/sections/Contact"))
 const CTA = dynamic(() => import("@/components/sections/CTA"))
 
 function SectionSkeleton() {
-  return <div className="min-h-[50vh] animate-pulse bg-white/[0.01]" />
+  return <div className="min-h-[50vh] animate-pulse bg-[var(--overlay-3)]" />
 }
 
 export default function Home() {

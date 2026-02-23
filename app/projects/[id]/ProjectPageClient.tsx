@@ -227,7 +227,7 @@ export default function ProjectPageClient({ project }: { project: Project }) {
                             <motion.div
                                 key={feature.title}
                                 variants={fadeUp}
-                                className="group relative rounded-2xl p-6 border border-[var(--overlay-6)] bg-white/[0.015] hover:bg-[var(--overlay-3)] hover:border-[var(--overlay-12)] transition-all duration-500"
+                                className="group relative rounded-2xl p-6 border border-[var(--overlay-6)] bg-[var(--overlay-3)] hover:bg-[var(--overlay-3)] hover:border-[var(--overlay-12)] transition-all duration-500"
                                 whileHover={{
                                     boxShadow: `0 0 40px -12px ${project.color}20`,
                                 }}
@@ -267,7 +267,7 @@ export default function ProjectPageClient({ project }: { project: Project }) {
                                     key={tech}
                                     variants={scaleIn}
                                     whileHover={{ scale: 1.08, y: -2 }}
-                                    className="px-4 py-2 rounded-xl border border-[var(--overlay-6)] bg-[var(--overlay-2)] text-[13px] font-medium text-[var(--overlay-50)] hover:text-[var(--color-text-primary)] hover:border-white/[0.15] transition-all duration-300 cursor-default"
+                                    className="px-4 py-2 rounded-xl border border-[var(--overlay-6)] bg-[var(--overlay-2)] text-[13px] font-medium text-[var(--overlay-50)] hover:text-[var(--color-text-primary)] hover:border-[var(--overlay-15)] transition-all duration-300 cursor-default"
                                 >
                                     {tech}
                                 </motion.span>
@@ -375,7 +375,7 @@ export default function ProjectPageClient({ project }: { project: Project }) {
                             </MagneticButton>
                             <Link
                                 href="/#portfolio"
-                                className="inline-flex items-center gap-2 px-6 py-4 rounded-full border border-white/10 text-sm font-medium text-[var(--overlay-50)] hover:text-[var(--color-text-primary)] hover:border-white/20 transition-all"
+                                className="inline-flex items-center gap-2 px-6 py-4 rounded-full border border-[var(--overlay-10)] text-sm font-medium text-[var(--overlay-50)] hover:text-[var(--color-text-primary)] hover:border-[var(--overlay-20)] transition-all"
                             >
                                 <ArrowLeft className="w-4 h-4" />
                                 View All Projects

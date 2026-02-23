@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { NAV_LINKS } from "@/lib/constants"
+import { ThemeToggle } from "@/components/ui/ThemeToggle"
 
 interface MobileMenuProps {
     onClose: () => void
@@ -17,7 +18,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
         >
             {/* Backdrop */}
             <motion.div
-                className="absolute inset-0 bg-black/80 backdrop-blur-xl"
+                className="absolute inset-0 bg-[var(--color-bg-primary)]/95 backdrop-blur-xl"
                 onClick={onClose}
             />
 
@@ -36,7 +37,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
                         key={link.href}
                         href={link.href}
                         onClick={onClose}
-                        className="text-3xl font-bold text-white/90 hover:text-[var(--color-text-primary)] transition-colors"
+                        className="text-3xl font-bold text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors"
                         variants={{
                             open: { opacity: 1, y: 0, filter: "blur(0px)" },
                             closed: { opacity: 0, y: 30, filter: "blur(10px)" },
@@ -47,19 +48,25 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
                     </motion.a>
                 ))}
 
-                <motion.a
-                    href="#contact"
-                    onClick={onClose}
-                    className="mt-4 px-8 py-4 text-lg font-semibold text-[var(--color-text-primary)] rounded-full bg-gradient-to-r from-[var(--color-brand-500)] to-[var(--color-accent-cyan)]"
+                <motion.div
+                    className="mt-2 flex items-center gap-4"
                     variants={{
-                        open: { opacity: 1, y: 0, scale: 1 },
-                        closed: { opacity: 0, y: 20, scale: 0.9 },
+                        open: { opacity: 1, y: 0 },
+                        closed: { opacity: 0, y: 20 },
                     }}
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 >
-                    Start a Project
-                </motion.a>
+                    <ThemeToggle className="w-10 h-10" />
+                    <a
+                        href="#contact"
+                        onClick={onClose}
+                        className="px-8 py-4 text-lg font-semibold text-white rounded-full bg-gradient-to-r from-[var(--color-brand-500)] to-[var(--color-accent-cyan)]"
+                    >
+                        Start a Project
+                    </a>
+                </motion.div>
             </motion.div>
         </motion.div>
     )
 }
+

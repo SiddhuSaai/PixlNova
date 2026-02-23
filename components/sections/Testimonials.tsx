@@ -116,7 +116,7 @@ function MiniCard({ testimonial, isActive, onClick }: { testimonial: Testimonial
             onClick={onClick}
             className={`text-left relative rounded-xl border p-4 transition-all duration-400 group ${isActive
                 ? "border-[var(--overlay-12)] bg-[var(--overlay-3)]"
-                : "border-[var(--overlay-4)] bg-transparent hover:border-[var(--overlay-8)] hover:bg-white/[0.015]"
+                : "border-[var(--overlay-4)] bg-transparent hover:border-[var(--overlay-8)] hover:bg-[var(--overlay-3)]"
                 }`}
         >
             {isActive && (
