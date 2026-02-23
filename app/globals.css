@@ -1,26 +1,395 @@
 @import "tailwindcss";
 
+/* ── Design Tokens ── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ── Color System (OKLCH for perceptual uniformity) ── */
+  --color-bg-primary: oklch(0.08 0.01 280);
+  --color-bg-secondary: oklch(0.12 0.015 280);
+  --color-bg-card: oklch(0.14 0.02 280);
+  --color-bg-card-hover: oklch(0.17 0.025 280);
+  --color-bg-elevated: oklch(0.20 0.03 280);
+
+  /* ── Border System ── */
+  --color-border: oklch(0.30 0.01 280 / 0.4);
+  --color-border-hover: oklch(0.55 0.15 285 / 0.6);
+  --color-border-focus: oklch(0.60 0.20 285);
+
+  /* ── Text System ── */
+  --color-text-primary: oklch(0.98 0.00 0);
+  --color-text-secondary: oklch(0.70 0.02 265);
+  --color-text-muted: oklch(0.50 0.02 265);
+
+  /* ── Brand Colors (Purple Spectrum) ── */
+  --color-brand-50: oklch(0.95 0.03 285);
+  --color-brand-100: oklch(0.90 0.06 285);
+  --color-brand-300: oklch(0.75 0.15 285);
+  --color-brand-400: oklch(0.65 0.20 285);
+  --color-brand-500: oklch(0.55 0.25 285);
+  --color-brand-600: oklch(0.48 0.25 285);
+  --color-brand-700: oklch(0.40 0.22 285);
+  --color-brand-900: oklch(0.15 0.05 285);
+
+  /* ── Accent Colors ── */
+  --color-accent-cyan: oklch(0.75 0.15 195);
+  --color-accent-pink: oklch(0.70 0.20 350);
+  --color-accent-green: oklch(0.72 0.18 155);
+  --color-accent-amber: oklch(0.80 0.15 80);
+
+  /* ── Gradients ── */
+  --gradient-brand: linear-gradient(135deg, var(--color-brand-500), var(--color-accent-cyan));
+  --gradient-hero: radial-gradient(ellipse 80% 50% at 50% -20%, oklch(0.40 0.20 285 / 0.4), transparent);
+  --gradient-card-hover: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      oklch(0.55 0.25 285 / 0.1),
+      transparent 40%);
+
+  /* ── Spacing Scale ── */
+  --space-section: clamp(4rem, 8vw, 8rem);
+  --space-content: clamp(2rem, 4vw, 4rem);
+
+  /* ── Typography Scale (Fluid) ── */
+  --font-size-display: clamp(3rem, 6vw + 1rem, 5.5rem);
+  --font-size-h1: clamp(2.25rem, 4vw + 0.5rem, 4rem);
+  --font-size-h2: clamp(1.75rem, 3vw + 0.25rem, 2.75rem);
+  --font-size-h3: clamp(1.25rem, 2vw + 0.25rem, 1.75rem);
+  --font-size-body: clamp(0.95rem, 1vw + 0.25rem, 1.125rem);
+  --font-size-small: clamp(0.8rem, 0.8vw + 0.2rem, 0.9rem);
+
+  /* ── Border Radius ── */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-glow: 0 0 60px -15px oklch(0.55 0.25 285 / 0.4);
+  --shadow-card: 0 4px 24px -4px oklch(0 0 0 / 0.3);
+  --shadow-elevated: 0 8px 32px -4px oklch(0 0 0 / 0.5);
+
+  /* ── Animation Timing ── */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* ── Z-Index Scale ── */
+  --z-base: 1;
+  --z-dropdown: 10;
+  --z-sticky: 20;
+  --z-overlay: 30;
+  --z-modal: 40;
+  --z-toast: 50;
+  --z-tooltip: 60;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Base Styles ── */
+* {
+  border-color: var(--color-border);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+::selection {
+  background: oklch(0.55 0.25 285 / 0.4);
+  color: white;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-500);
+}
+
+/* ── Component Styles ── */
+.glass {
+  background: oklch(0.14 0.02 280 / 0.6);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid oklch(1 0 0 / 0.08);
+}
+
+.glass-strong {
+  background: oklch(0.10 0.015 280 / 0.8);
+  backdrop-filter: blur(40px) saturate(200%);
+  border: 1px solid oklch(1 0 0 / 0.12);
+}
+
+.gradient-text {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow {
+  box-shadow: var(--shadow-glow);
+}
+
+/* ── Card Hover ── */
+.card-hover {
+  transition:
+    transform 0.3s var(--ease-out-expo),
+    box-shadow 0.3s var(--ease-out-expo),
+    border-color 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow);
+  border-color: var(--color-border-hover);
+}
+
+/* ── Navbar Mount Animation ── */
+.navbar {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s var(--ease-out-expo);
+}
+
+@supports (animation-timeline: view()) {
+  .navbar {
+    @starting-style {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  }
+}
+
+/* ── Infinite Marquee ── */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-track-reverse {
+  display: flex;
+  animation: marquee-reverse 40s linear infinite;
+}
+
+.marquee-track:hover,
+.marquee-track-reverse:hover {
+  animation-play-state: paused;
+}
+
+/* ── Aurora Background ── */
+@keyframes aurora {
+
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+
+  25% {
+    transform: translate(5%, -5%) rotate(1deg) scale(1.02);
+  }
+
+  50% {
+    transform: translate(-3%, 3%) rotate(-0.5deg) scale(0.98);
+  }
+
+  75% {
+    transform: translate(2%, -2%) rotate(0.5deg) scale(1.01);
+  }
+}
+
+.aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: aurora 15s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* ── Typewriter Cursor ── */
+@keyframes blink {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* ── Scroll Progress Bar ── */
+.scroll-progress {
+  background: var(--gradient-brand);
+  transform-origin: left;
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .aurora-blob {
+    animation: none;
+  }
+
+  .marquee-track,
+  .marquee-track-reverse {
+    animation: none;
+  }
+}
+
+/* ── Section Container ── */
+.section-container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1rem, 5vw, 2rem);
+  padding-right: clamp(1rem, 5vw, 2rem);
+}
+
+/* ── Animated Number Counter ── */
+@keyframes count-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Process Timeline Line Drawing ── */
+@keyframes line-draw {
+  from {
+    stroke-dashoffset: 1000;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ── Chat Markdown Styles ── */
+.chat-markdown p {
+  margin-bottom: 0.5em;
+}
+
+.chat-markdown p:last-child {
+  margin-bottom: 0;
+}
+
+.chat-markdown ul,
+.chat-markdown ol {
+  padding-left: 1.25em;
+  margin: 0.4em 0;
+}
+
+.chat-markdown ul {
+  list-style-type: disc;
+}
+
+.chat-markdown ol {
+  list-style-type: decimal;
+}
+
+.chat-markdown li {
+  margin-bottom: 0.15em;
+}
+
+.chat-markdown li::marker {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.chat-markdown code {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.15em 0.4em;
+  border-radius: 0.3em;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.chat-markdown pre {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 0.75em;
+  padding: 0.75em 1em;
+  overflow-x: auto;
+  margin: 0.5em 0;
+}
+
+.chat-markdown pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.chat-markdown blockquote {
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  padding-left: 0.75em;
+  margin: 0.5em 0;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.chat-markdown h1,
+.chat-markdown h2,
+.chat-markdown h3 {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  margin: 0.6em 0 0.3em;
 }
