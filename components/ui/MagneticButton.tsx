@@ -10,6 +10,7 @@ interface MagneticButtonProps {
     strength?: number
     as?: "button" | "a"
     href?: string
+    style?: React.CSSProperties
 }
 
 export function MagneticButton({
@@ -19,6 +20,7 @@ export function MagneticButton({
     strength = 40,
     as = "button",
     href,
+    style,
 }: MagneticButtonProps) {
     const ref = useRef<HTMLElement>(null)
     const [position, setPosition] = useState({ x: 0, y: 0 })
@@ -46,6 +48,7 @@ export function MagneticButton({
             animate={{ x: position.x, y: position.y }}
             transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
             className={className}
+            style={style}
         >
             {children}
         </Component>
