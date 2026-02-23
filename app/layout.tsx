@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next"
 import { geistSans, geistMono } from "@/lib/fonts"
 import { GeoProvider } from "@/components/providers/GeoProvider"
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider"
+import { ThemeProvider } from "@/components/providers/ThemeProvider"
 import ChatBot from "@/components/ui/ChatBot"
 import "./globals.css"
 
@@ -11,9 +12,9 @@ export const viewport: Viewport = {
   maximumScale: 5,
   themeColor: [
     { media: "(prefers-color-scheme: dark)", color: "#04040A" },
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: light)", color: "#f5f5f7" },
   ],
-  colorScheme: "dark",
+  colorScheme: "dark light",
 }
 
 export const metadata: Metadata = {
@@ -47,9 +48,29 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 }
 
+/* Anti-flash script: sets data-theme before first paint */
+const THEME_SCRIPT = `
+(function(){
+  try {
+    var t = localStorage.getItem('theme');
+    if (t === 'light' || t === 'dark') {
+      document.documentElement.setAttribute('data-theme', t);
+    } else {
+      var d = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', d);
+    }
+  } catch(e) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+})();
+`
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+      </head>
       <body className="antialiased">
         <a
           href="#main-content"
@@ -57,12 +78,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to main content
         </a>
-        <GeoProvider>
-          <SmoothScrollProvider>
-            {children}
-          </SmoothScrollProvider>
-          <ChatBot />
-        </GeoProvider>
+        <ThemeProvider>
+          <GeoProvider>
+            <SmoothScrollProvider>
+              {children}
+            </SmoothScrollProvider>
+            <ChatBot />
+          </GeoProvider>
+        </ThemeProvider>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

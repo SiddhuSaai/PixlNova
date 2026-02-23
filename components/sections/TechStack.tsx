@@ -144,14 +144,14 @@ export default function TechStack() {
                 >
                     {/* ── Header ── */}
                     <motion.div variants={fadeUp} className="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/[0.06] bg-white/[0.02] mb-6">
-                            <Code2 className="w-3.5 h-3.5 text-white/30" />
-                            <span className="text-[11px] sm:text-[12px] text-white/35 font-medium uppercase tracking-widest">Tech Stack</span>
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--overlay-6)] bg-[var(--overlay-2)] mb-6">
+                            <Code2 className="w-3.5 h-3.5 text-[var(--overlay-30)]" />
+                            <span className="text-[11px] sm:text-[12px] text-[var(--overlay-35)] font-medium uppercase tracking-widest">Tech Stack</span>
                         </div>
-                        <h2 className="font-bold text-white" style={{ fontSize: "var(--font-size-h2)" }}>
+                        <h2 className="font-bold text-[var(--color-text-primary)]" style={{ fontSize: "var(--font-size-h2)" }}>
                             Built With <span className="gradient-text">Battle-Tested</span> Tech
                         </h2>
-                        <p className="mt-4 text-white/35 text-[15px] sm:text-[17px] leading-relaxed max-w-xl mx-auto">
+                        <p className="mt-4 text-[var(--overlay-35)] text-[15px] sm:text-[17px] leading-relaxed max-w-xl mx-auto">
                             We don&apos;t chase hype — we pick the right tool for every job. Here&apos;s the technology that powers your products.
                         </p>
                     </motion.div>
@@ -166,14 +166,14 @@ export default function TechStack() {
                                     key={cat.id}
                                     onClick={() => setActiveCategory(cat.id)}
                                     className={`relative px-3 sm:px-4 py-2 text-[12px] sm:text-[13px] font-medium rounded-full transition-all duration-300 flex items-center gap-1.5 ${isActive
-                                        ? "text-white"
-                                        : "text-white/25 hover:text-white/50"
+                                        ? "text-[var(--color-text-primary)]"
+                                        : "text-[var(--overlay-25)] hover:text-[var(--overlay-50)]"
                                         }`}
                                 >
                                     {isActive && (
                                         <motion.div
                                             layoutId="techTab"
-                                            className="absolute inset-0 rounded-full border bg-white/[0.05]"
+                                            className="absolute inset-0 rounded-full border bg-[var(--overlay-5)]"
                                             style={{ borderColor: `${cat.color}30` }}
                                             transition={{ type: "spring", stiffness: 300, damping: 30 }}
                                         />
@@ -196,7 +196,7 @@ export default function TechStack() {
                             className="max-w-5xl mx-auto"
                         >
                             {/* Hero card with image */}
-                            <div className="relative rounded-2xl border border-white/[0.06] overflow-hidden mb-5">
+                            <div className="relative rounded-2xl border border-[var(--overlay-6)] overflow-hidden mb-5">
                                 {/* Background image or gradient */}
                                 <div className="absolute inset-0 z-0">
                                     {current.image ? (
@@ -231,9 +231,9 @@ export default function TechStack() {
                                                 >
                                                     <CurrentIcon className="w-5 h-5" />
                                                 </div>
-                                                <h3 className="text-2xl sm:text-3xl font-bold text-white">{current.category}</h3>
+                                                <h3 className="text-2xl sm:text-3xl font-bold text-[var(--color-text-primary)]">{current.category}</h3>
                                             </div>
-                                            <p className="text-[14px] sm:text-[15px] text-white/35 leading-relaxed">
+                                            <p className="text-[14px] sm:text-[15px] text-[var(--overlay-35)] leading-relaxed">
                                                 {current.description}
                                             </p>
                                         </div>
@@ -244,14 +244,14 @@ export default function TechStack() {
                                                 <div className="text-3xl font-extrabold" style={{ color: current.color }}>
                                                     {current.techs.length}
                                                 </div>
-                                                <div className="text-[10px] text-white/20 uppercase tracking-wider font-medium">Technologies</div>
+                                                <div className="text-[10px] text-[var(--overlay-20)] uppercase tracking-wider font-medium">Technologies</div>
                                             </div>
-                                            <div className="w-px h-10 bg-white/[0.06]" />
+                                            <div className="w-px h-10 bg-[var(--overlay-6)]" />
                                             <div className="text-center">
                                                 <div className="text-3xl font-extrabold" style={{ color: current.color }}>
                                                     {current.techs.filter((t) => t.level === "Expert").length}
                                                 </div>
-                                                <div className="text-[10px] text-white/20 uppercase tracking-wider font-medium">Expert-Level</div>
+                                                <div className="text-[10px] text-[var(--overlay-20)] uppercase tracking-wider font-medium">Expert-Level</div>
                                             </div>
                                         </div>
                                     </div>
@@ -268,7 +268,7 @@ export default function TechStack() {
                                             initial={{ opacity: 0, y: 12 }}
                                             animate={{ opacity: 1, y: 0 }}
                                             transition={{ duration: 0.3, delay: i * 0.05 }}
-                                            className="group relative rounded-xl border border-white/[0.06] bg-white/[0.015] p-5 hover:bg-white/[0.03] hover:border-white/[0.12] transition-all duration-400"
+                                            className="group relative rounded-xl border border-[var(--overlay-6)] bg-white/[0.015] p-5 hover:bg-[var(--overlay-3)] hover:border-[var(--overlay-12)] transition-all duration-400"
                                             style={{
                                                 // @ts-expect-error: CSS custom property
                                                 "--card-glow": `${current.color}10`,
@@ -281,7 +281,7 @@ export default function TechStack() {
                                             }}
                                         >
                                             <div className="flex items-start justify-between mb-2">
-                                                <h4 className="text-[15px] font-semibold text-white group-hover:text-white transition-colors">
+                                                <h4 className="text-[15px] font-semibold text-[var(--color-text-primary)] group-hover:text-[var(--color-text-primary)] transition-colors">
                                                     {tech.name}
                                                 </h4>
                                                 <span
@@ -294,12 +294,12 @@ export default function TechStack() {
                                                     {tech.level}
                                                 </span>
                                             </div>
-                                            <p className="text-[12px] text-white/25 leading-snug group-hover:text-white/40 transition-colors duration-300">
+                                            <p className="text-[12px] text-[var(--overlay-25)] leading-snug group-hover:text-[var(--overlay-40)] transition-colors duration-300">
                                                 {tech.description}
                                             </p>
 
                                             {/* Progress indicator */}
-                                            <div className="mt-3 h-[2px] rounded-full bg-white/[0.04] overflow-hidden">
+                                            <div className="mt-3 h-[2px] rounded-full bg-[var(--overlay-4)] overflow-hidden">
                                                 <motion.div
                                                     initial={{ width: 0 }}
                                                     animate={{
@@ -319,8 +319,8 @@ export default function TechStack() {
 
                     {/* ── Bottom message ── */}
                     <motion.div variants={fadeUp} className="mt-10 sm:mt-14 text-center">
-                        <p className="text-[12px] sm:text-[13px] text-white/20 max-w-lg mx-auto leading-relaxed">
-                            Don&apos;t see what you need? We adapt to your stack. <a href="#contact" className="text-white/40 hover:text-white/60 transition-colors underline underline-offset-2">Tell us about your project →</a>
+                        <p className="text-[12px] sm:text-[13px] text-[var(--overlay-20)] max-w-lg mx-auto leading-relaxed">
+                            Don&apos;t see what you need? We adapt to your stack. <a href="#contact" className="text-[var(--overlay-40)] hover:text-[var(--overlay-60)] transition-colors underline underline-offset-2">Tell us about your project →</a>
                         </p>
                     </motion.div>
                 </motion.div>

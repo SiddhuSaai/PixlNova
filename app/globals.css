@@ -19,6 +19,28 @@
   --color-text-secondary: oklch(0.70 0.02 265);
   --color-text-muted: oklch(0.50 0.02 265);
 
+  /* ── Overlay System (white-based for dark theme) ── */
+  --overlay-2: oklch(1 0 0 / 0.02);
+  --overlay-3: oklch(1 0 0 / 0.03);
+  --overlay-4: oklch(1 0 0 / 0.04);
+  --overlay-5: oklch(1 0 0 / 0.05);
+  --overlay-6: oklch(1 0 0 / 0.06);
+  --overlay-8: oklch(1 0 0 / 0.08);
+  --overlay-10: oklch(1 0 0 / 0.10);
+  --overlay-12: oklch(1 0 0 / 0.12);
+  --overlay-15: oklch(1 0 0 / 0.15);
+  --overlay-20: oklch(1 0 0 / 0.20);
+  --overlay-25: oklch(1 0 0 / 0.25);
+  --overlay-30: oklch(1 0 0 / 0.30);
+  --overlay-35: oklch(1 0 0 / 0.35);
+  --overlay-40: oklch(1 0 0 / 0.40);
+  --overlay-45: oklch(1 0 0 / 0.45);
+  --overlay-50: oklch(1 0 0 / 0.50);
+  --overlay-60: oklch(1 0 0 / 0.60);
+  --overlay-70: oklch(1 0 0 / 0.70);
+  --overlay-80: oklch(1 0 0 / 0.80);
+  --overlay-85: oklch(1 0 0 / 0.85);
+
   /* ── Brand Colors (Purple Spectrum) ── */
   --color-brand-50: oklch(0.95 0.03 285);
   --color-brand-100: oklch(0.90 0.06 285);
@@ -81,6 +103,54 @@
   --z-tooltip: 60;
 }
 
+/* ── Light Theme Overrides ── */
+[data-theme="light"] {
+  --color-bg-primary: oklch(0.97 0.003 280);
+  --color-bg-secondary: oklch(0.95 0.005 280);
+  --color-bg-card: oklch(1.00 0 0);
+  --color-bg-card-hover: oklch(0.97 0.004 280);
+  --color-bg-elevated: oklch(0.99 0.002 280);
+
+  --color-border: oklch(0.82 0.008 280 / 0.5);
+  --color-border-hover: oklch(0.55 0.15 285 / 0.4);
+  --color-border-focus: oklch(0.55 0.20 285);
+
+  --color-text-primary: oklch(0.15 0.02 280);
+  --color-text-secondary: oklch(0.40 0.02 265);
+  --color-text-muted: oklch(0.55 0.015 265);
+
+  /* Overlays invert: black-based for light theme */
+  --overlay-2: oklch(0 0 0 / 0.02);
+  --overlay-3: oklch(0 0 0 / 0.03);
+  --overlay-4: oklch(0 0 0 / 0.04);
+  --overlay-5: oklch(0 0 0 / 0.05);
+  --overlay-6: oklch(0 0 0 / 0.06);
+  --overlay-8: oklch(0 0 0 / 0.08);
+  --overlay-10: oklch(0 0 0 / 0.10);
+  --overlay-12: oklch(0 0 0 / 0.12);
+  --overlay-15: oklch(0 0 0 / 0.15);
+  --overlay-20: oklch(0 0 0 / 0.20);
+  --overlay-25: oklch(0 0 0 / 0.25);
+  --overlay-30: oklch(0 0 0 / 0.30);
+  --overlay-35: oklch(0 0 0 / 0.35);
+  --overlay-40: oklch(0 0 0 / 0.40);
+  --overlay-45: oklch(0 0 0 / 0.45);
+  --overlay-50: oklch(0 0 0 / 0.50);
+  --overlay-60: oklch(0 0 0 / 0.60);
+  --overlay-70: oklch(0 0 0 / 0.70);
+  --overlay-80: oklch(0 0 0 / 0.80);
+  --overlay-85: oklch(0 0 0 / 0.85);
+
+  --gradient-hero: radial-gradient(ellipse 80% 50% at 50% -20%, oklch(0.80 0.10 285 / 0.15), transparent);
+  --gradient-card-hover: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      oklch(0.55 0.25 285 / 0.06),
+      transparent 40%);
+
+  --shadow-glow: 0 0 60px -15px oklch(0.55 0.25 285 / 0.15);
+  --shadow-card: 0 2px 16px -4px oklch(0 0 0 / 0.06);
+  --shadow-elevated: 0 8px 32px -4px oklch(0 0 0 / 0.08);
+}
+
 /* ── Base Styles ── */
 * {
   border-color: var(--color-border);
@@ -91,6 +161,7 @@ html {
   scrollbar-gutter: stable;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
@@ -101,6 +172,11 @@ body {
 
 ::selection {
   background: oklch(0.55 0.25 285 / 0.4);
+  color: white;
+}
+
+[data-theme="light"] ::selection {
+  background: oklch(0.55 0.25 285 / 0.3);
   color: white;
 }
 
@@ -137,6 +213,18 @@ body {
   background: oklch(0.10 0.015 280 / 0.8);
   backdrop-filter: blur(40px) saturate(200%);
   border: 1px solid oklch(1 0 0 / 0.12);
+}
+
+[data-theme="light"] .glass {
+  background: oklch(1 0 0 / 0.7);
+  border: 1px solid oklch(0 0 0 / 0.06);
+  box-shadow: 0 1px 8px -2px oklch(0 0 0 / 0.05);
+}
+
+[data-theme="light"] .glass-strong {
+  background: oklch(1 0 0 / 0.85);
+  border: 1px solid oklch(0 0 0 / 0.08);
+  box-shadow: 0 2px 12px -2px oklch(0 0 0 / 0.06);
 }
 
 .gradient-text {
@@ -354,20 +442,20 @@ body {
 }
 
 .chat-markdown li::marker {
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--overlay-20);
 }
 
 .chat-markdown code {
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--overlay-6);
   padding: 0.15em 0.4em;
   border-radius: 0.3em;
   font-size: 0.9em;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--overlay-70);
 }
 
 .chat-markdown pre {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--overlay-4);
+  border: 1px solid var(--overlay-6);
   border-radius: 0.75em;
   padding: 0.75em 1em;
   overflow-x: auto;
@@ -380,16 +468,16 @@ body {
 }
 
 .chat-markdown blockquote {
-  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  border-left: 2px solid var(--overlay-10);
   padding-left: 0.75em;
   margin: 0.5em 0;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--overlay-40);
 }
 
 .chat-markdown h1,
 .chat-markdown h2,
 .chat-markdown h3 {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--overlay-85);
   font-weight: 600;
   margin: 0.6em 0 0.3em;
 }

@@ -52,10 +52,10 @@ export default function Contact() {
     const prevStep = () => setCurrentStep((s) => Math.max(s - 1, 0))
 
     const inputClass =
-        "w-full px-4 py-3 rounded-xl border border-white/[0.06] bg-white/[0.02] text-[13px] text-white placeholder:text-white/15 focus:outline-none focus:border-white/[0.15] focus:bg-white/[0.03] transition-all duration-300"
+        "w-full px-4 py-3 rounded-xl border border-[var(--overlay-6)] bg-[var(--overlay-2)] text-[13px] text-[var(--color-text-primary)] placeholder:text-[var(--overlay-15)] focus:outline-none focus:border-white/[0.15] focus:bg-[var(--overlay-3)] transition-all duration-300"
     const inputClassWithIcon =
-        "w-full pl-10 pr-4 py-3 rounded-xl border border-white/[0.06] bg-white/[0.02] text-[13px] text-white placeholder:text-white/15 focus:outline-none focus:border-white/[0.15] focus:bg-white/[0.03] transition-all duration-300"
-    const labelClass = "block text-[10px] text-white/20 mb-1.5 uppercase tracking-widest font-medium"
+        "w-full pl-10 pr-4 py-3 rounded-xl border border-[var(--overlay-6)] bg-[var(--overlay-2)] text-[13px] text-[var(--color-text-primary)] placeholder:text-[var(--overlay-15)] focus:outline-none focus:border-white/[0.15] focus:bg-[var(--overlay-3)] transition-all duration-300"
+    const labelClass = "block text-[10px] text-[var(--overlay-20)] mb-1.5 uppercase tracking-widest font-medium"
 
     return (
         <section id="contact" className="py-10">
@@ -68,14 +68,14 @@ export default function Contact() {
                 >
                     {/* ── Header ── */}
                     <motion.div variants={fadeUp} className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/[0.06] bg-white/[0.02] mb-6">
-                            <Sparkles className="w-3.5 h-3.5 text-white/30" />
-                            <span className="text-[11px] sm:text-[12px] text-white/35 font-medium uppercase tracking-widest">Get in Touch</span>
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--overlay-6)] bg-[var(--overlay-2)] mb-6">
+                            <Sparkles className="w-3.5 h-3.5 text-[var(--overlay-30)]" />
+                            <span className="text-[11px] sm:text-[12px] text-[var(--overlay-35)] font-medium uppercase tracking-widest">Get in Touch</span>
                         </div>
-                        <h2 className="font-bold text-white" style={{ fontSize: "var(--font-size-h2)" }}>
+                        <h2 className="font-bold text-[var(--color-text-primary)]" style={{ fontSize: "var(--font-size-h2)" }}>
                             Let&apos;s Build <span className="gradient-text">Something Amazing</span>
                         </h2>
-                        <p className="mt-4 text-white/35 text-[15px] sm:text-[17px] leading-relaxed max-w-xl mx-auto">
+                        <p className="mt-4 text-[var(--overlay-35)] text-[15px] sm:text-[17px] leading-relaxed max-w-xl mx-auto">
                             Tell us about your vision — we&apos;ll handle the rest. Free consultation, no strings attached.
                         </p>
                     </motion.div>
@@ -92,18 +92,18 @@ export default function Contact() {
                                     <div className="w-14 h-14 rounded-full bg-emerald-500/10 flex items-center justify-center mx-auto mb-5">
                                         <Check className="w-7 h-7 text-emerald-400" />
                                     </div>
-                                    <h3 className="text-xl font-bold text-white mb-2">Message Sent!</h3>
-                                    <p className="text-[13px] text-white/30 max-w-sm mx-auto leading-relaxed">
+                                    <h3 className="text-xl font-bold text-[var(--color-text-primary)] mb-2">Message Sent!</h3>
+                                    <p className="text-[13px] text-[var(--overlay-30)] max-w-sm mx-auto leading-relaxed">
                                         We&apos;ll get back to you within 2 hours during business days. Check your inbox for a confirmation.
                                     </p>
-                                    <div className="mt-6 flex items-center justify-center gap-4 text-[11px] text-white/15">
+                                    <div className="mt-6 flex items-center justify-center gap-4 text-[11px] text-[var(--overlay-15)]">
                                         <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> Avg reply: 2 hrs</span>
-                                        <span className="w-px h-3 bg-white/[0.06]" />
+                                        <span className="w-px h-3 bg-[var(--overlay-6)]" />
                                         <span className="flex items-center gap-1"><Check className="w-3 h-3" /> Confirmation sent</span>
                                     </div>
                                 </motion.div>
                             ) : (
-                                <form onSubmit={handleSubmit} className="rounded-2xl border border-white/[0.06] bg-white/[0.015] overflow-hidden">
+                                <form onSubmit={handleSubmit} className="rounded-2xl border border-[var(--overlay-6)] bg-white/[0.015] overflow-hidden">
                                     {/* ── Progress bar ── */}
                                     <div className="px-6 pt-6 sm:px-8 sm:pt-7">
                                         <div className="flex items-center gap-3 mb-2">
@@ -115,14 +115,14 @@ export default function Contact() {
                                                         className={`w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-bold transition-all duration-300 ${i < currentStep
                                                             ? "bg-emerald-500/20 text-emerald-400"
                                                             : i === currentStep
-                                                                ? "bg-white/[0.08] text-white border border-white/[0.12]"
-                                                                : "bg-white/[0.02] text-white/15 border border-white/[0.04]"
+                                                                ? "bg-[var(--overlay-8)] text-[var(--color-text-primary)] border border-[var(--overlay-12)]"
+                                                                : "bg-[var(--overlay-2)] text-[var(--overlay-15)] border border-[var(--overlay-4)]"
                                                             }`}
                                                     >
                                                         {i < currentStep ? <Check className="w-3 h-3" /> : i + 1}
                                                     </button>
                                                     {i < steps.length - 1 && (
-                                                        <div className="flex-1 h-px relative overflow-hidden rounded-full bg-white/[0.04]">
+                                                        <div className="flex-1 h-px relative overflow-hidden rounded-full bg-[var(--overlay-4)]">
                                                             <div
                                                                 className="absolute inset-y-0 left-0 bg-emerald-500/40 rounded-full transition-all duration-500"
                                                                 style={{ width: i < currentStep ? "100%" : "0%" }}
@@ -133,10 +133,10 @@ export default function Contact() {
                                             ))}
                                         </div>
                                         <div className="flex items-center justify-between mb-6">
-                                            <span className="text-[10px] text-white/15 uppercase tracking-widest font-medium">
+                                            <span className="text-[10px] text-[var(--overlay-15)] uppercase tracking-widest font-medium">
                                                 Step {currentStep + 1}/3 — {steps[currentStep]}
                                             </span>
-                                            <span className="text-[10px] text-white/10">
+                                            <span className="text-[10px] text-[var(--overlay-10)]">
                                                 {Math.round(((currentStep + 1) / 3) * 100)}% complete
                                             </span>
                                         </div>
@@ -157,7 +157,7 @@ export default function Contact() {
                                                     <div>
                                                         <label className={labelClass}>Full Name *</label>
                                                         <div className="relative">
-                                                            <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/15" />
+                                                            <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--overlay-15)]" />
                                                             <input
                                                                 type="text"
                                                                 required
@@ -171,7 +171,7 @@ export default function Contact() {
                                                     <div>
                                                         <label className={labelClass}>Email Address *</label>
                                                         <div className="relative">
-                                                            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/15" />
+                                                            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--overlay-15)]" />
                                                             <input
                                                                 type="email"
                                                                 required
@@ -183,9 +183,9 @@ export default function Contact() {
                                                         </div>
                                                     </div>
                                                     <div>
-                                                        <label className={labelClass}>Company <span className="text-white/10">(Optional)</span></label>
+                                                        <label className={labelClass}>Company <span className="text-[var(--overlay-10)]">(Optional)</span></label>
                                                         <div className="relative">
-                                                            <Building className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/15" />
+                                                            <Building className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--overlay-15)]" />
                                                             <input
                                                                 type="text"
                                                                 value={formData.company}
@@ -196,7 +196,7 @@ export default function Contact() {
                                                         </div>
                                                     </div>
                                                     {!geo.loading && (
-                                                        <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/[0.02] border border-white/[0.04] text-[11px] text-white/15">
+                                                        <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--overlay-2)] border border-[var(--overlay-4)] text-[11px] text-[var(--overlay-15)]">
                                                             <Globe2 className="w-3 h-3" />
                                                             {geo.flag} Detected location: {geo.country}
                                                         </div>
@@ -222,8 +222,8 @@ export default function Contact() {
                                                                     type="button"
                                                                     onClick={() => setFormData({ ...formData, service: opt.value })}
                                                                     className={`text-left px-3 py-2.5 rounded-xl text-[12px] font-medium transition-all duration-300 border ${formData.service === opt.value
-                                                                        ? "border-white/[0.15] bg-white/[0.05] text-white"
-                                                                        : "border-white/[0.04] bg-transparent text-white/25 hover:border-white/[0.08] hover:text-white/50"
+                                                                        ? "border-white/[0.15] bg-[var(--overlay-5)] text-[var(--color-text-primary)]"
+                                                                        : "border-[var(--overlay-4)] bg-transparent text-[var(--overlay-25)] hover:border-[var(--overlay-8)] hover:text-[var(--overlay-50)]"
                                                                         }`}
                                                                 >
                                                                     {opt.label}
@@ -254,8 +254,8 @@ export default function Contact() {
                                                                     type="button"
                                                                     onClick={() => setFormData({ ...formData, timeline: opt.value })}
                                                                     className={`text-left px-3 py-2.5 rounded-xl text-[12px] font-medium transition-all duration-300 border ${formData.timeline === opt.value
-                                                                        ? "border-white/[0.15] bg-white/[0.05] text-white"
-                                                                        : "border-white/[0.04] bg-transparent text-white/25 hover:border-white/[0.08] hover:text-white/50"
+                                                                        ? "border-white/[0.15] bg-[var(--overlay-5)] text-[var(--color-text-primary)]"
+                                                                        : "border-[var(--overlay-4)] bg-transparent text-[var(--overlay-25)] hover:border-[var(--overlay-8)] hover:text-[var(--overlay-50)]"
                                                                         }`}
                                                                 >
                                                                     {opt.label}
@@ -278,7 +278,7 @@ export default function Contact() {
                                                     <div>
                                                         <label className={labelClass}>Tell us about your project *</label>
                                                         <div className="relative">
-                                                            <MessageSquare className="absolute left-3 top-3 w-4 h-4 text-white/15" />
+                                                            <MessageSquare className="absolute left-3 top-3 w-4 h-4 text-[var(--overlay-15)]" />
                                                             <textarea
                                                                 required
                                                                 value={formData.description}
@@ -288,27 +288,27 @@ export default function Contact() {
                                                                 className={`${inputClassWithIcon} resize-none`}
                                                             />
                                                         </div>
-                                                        <p className="mt-1.5 text-[10px] text-white/10">
+                                                        <p className="mt-1.5 text-[10px] text-[var(--overlay-10)]">
                                                             The more detail you share, the better we can tailor our proposal.
                                                         </p>
                                                     </div>
 
                                                     {/* Summary preview */}
                                                     {(formData.name || formData.service) && (
-                                                        <div className="rounded-xl border border-white/[0.04] bg-white/[0.015] p-4">
-                                                            <div className="text-[10px] text-white/15 uppercase tracking-widest font-medium mb-2">Submission Summary</div>
+                                                        <div className="rounded-xl border border-[var(--overlay-4)] bg-white/[0.015] p-4">
+                                                            <div className="text-[10px] text-[var(--overlay-15)] uppercase tracking-widest font-medium mb-2">Submission Summary</div>
                                                             <div className="grid grid-cols-2 gap-2 text-[11px]">
                                                                 {formData.name && (
-                                                                    <div><span className="text-white/15">Name:</span> <span className="text-white/40">{formData.name}</span></div>
+                                                                    <div><span className="text-[var(--overlay-15)]">Name:</span> <span className="text-[var(--overlay-40)]">{formData.name}</span></div>
                                                                 )}
                                                                 {formData.service && (
-                                                                    <div><span className="text-white/15">Service:</span> <span className="text-white/40">{serviceOptions.find(s => s.value === formData.service)?.label}</span></div>
+                                                                    <div><span className="text-[var(--overlay-15)]">Service:</span> <span className="text-[var(--overlay-40)]">{serviceOptions.find(s => s.value === formData.service)?.label}</span></div>
                                                                 )}
                                                                 {formData.budget && (
-                                                                    <div><span className="text-white/15">Budget:</span> <span className="text-white/40">{formData.budget}</span></div>
+                                                                    <div><span className="text-[var(--overlay-15)]">Budget:</span> <span className="text-[var(--overlay-40)]">{formData.budget}</span></div>
                                                                 )}
                                                                 {formData.timeline && (
-                                                                    <div><span className="text-white/15">Timeline:</span> <span className="text-white/40">{timelineOptions.find(t => t.value === formData.timeline)?.label}</span></div>
+                                                                    <div><span className="text-[var(--overlay-15)]">Timeline:</span> <span className="text-[var(--overlay-40)]">{timelineOptions.find(t => t.value === formData.timeline)?.label}</span></div>
                                                                 )}
                                                             </div>
                                                         </div>
@@ -318,12 +318,12 @@ export default function Contact() {
                                         </AnimatePresence>
 
                                         {/* ── Navigation ── */}
-                                        <div className="flex items-center justify-between mt-6 pt-5 border-t border-white/[0.04]">
+                                        <div className="flex items-center justify-between mt-6 pt-5 border-t border-[var(--overlay-4)]">
                                             {currentStep > 0 ? (
                                                 <button
                                                     type="button"
                                                     onClick={prevStep}
-                                                    className="inline-flex items-center gap-1.5 px-3 py-2 text-[12px] text-white/25 hover:text-white/60 transition-colors rounded-lg"
+                                                    className="inline-flex items-center gap-1.5 px-3 py-2 text-[12px] text-[var(--overlay-25)] hover:text-[var(--overlay-60)] transition-colors rounded-lg"
                                                 >
                                                     <ArrowLeft className="w-3.5 h-3.5" />
                                                     Back
@@ -335,7 +335,7 @@ export default function Contact() {
                                                 <button
                                                     type="button"
                                                     onClick={nextStep}
-                                                    className="inline-flex items-center gap-1.5 px-5 py-2.5 text-[12px] font-semibold text-white rounded-full bg-gradient-to-r from-[var(--color-brand-500)] to-[oklch(0.65_0.22_280)] hover:shadow-[0_4px_24px_-4px_rgba(139,92,246,0.35)] hover:-translate-y-0.5 transition-all duration-300"
+                                                    className="inline-flex items-center gap-1.5 px-5 py-2.5 text-[12px] font-semibold text-[var(--color-text-primary)] rounded-full bg-gradient-to-r from-[var(--color-brand-500)] to-[oklch(0.65_0.22_280)] hover:shadow-[0_4px_24px_-4px_rgba(139,92,246,0.35)] hover:-translate-y-0.5 transition-all duration-300"
                                                 >
                                                     Continue
                                                     <ArrowRight className="w-3.5 h-3.5" />
@@ -343,7 +343,7 @@ export default function Contact() {
                                             ) : (
                                                 <button
                                                     type="submit"
-                                                    className="group inline-flex items-center gap-2 px-6 py-2.5 text-[13px] font-semibold text-white rounded-full bg-gradient-to-r from-[var(--color-brand-500)] to-[oklch(0.65_0.22_280)] hover:shadow-[0_4px_24px_-4px_rgba(139,92,246,0.35)] hover:-translate-y-0.5 transition-all duration-300"
+                                                    className="group inline-flex items-center gap-2 px-6 py-2.5 text-[13px] font-semibold text-[var(--color-text-primary)] rounded-full bg-gradient-to-r from-[var(--color-brand-500)] to-[oklch(0.65_0.22_280)] hover:shadow-[0_4px_24px_-4px_rgba(139,92,246,0.35)] hover:-translate-y-0.5 transition-all duration-300"
                                                 >
                                                     <Send className="w-3.5 h-3.5" />
                                                     Send Message
@@ -366,7 +366,7 @@ export default function Contact() {
                             ].map((item) => (
                                 <div
                                     key={item.title}
-                                    className="group rounded-xl border border-white/[0.04] bg-white/[0.015] p-4 hover:border-white/[0.08] transition-all duration-300"
+                                    className="group rounded-xl border border-[var(--overlay-4)] bg-white/[0.015] p-4 hover:border-[var(--overlay-8)] transition-all duration-300"
                                 >
                                     <div className="flex items-start gap-3">
                                         <div
@@ -377,26 +377,26 @@ export default function Contact() {
                                         </div>
                                         <div className="flex-1 min-w-0">
                                             <div className="flex items-center justify-between">
-                                                <h4 className="text-[12px] font-semibold text-white/60">{item.title}</h4>
-                                                <span className="text-[9px] text-white/10 uppercase tracking-wider">{item.subtle}</span>
+                                                <h4 className="text-[12px] font-semibold text-[var(--overlay-60)]">{item.title}</h4>
+                                                <span className="text-[9px] text-[var(--overlay-10)] uppercase tracking-wider">{item.subtle}</span>
                                             </div>
-                                            <p className="text-[12px] text-white/30 mt-0.5">{item.desc}</p>
+                                            <p className="text-[12px] text-[var(--overlay-30)] mt-0.5">{item.desc}</p>
                                         </div>
                                     </div>
                                 </div>
                             ))}
 
                             {/* Trust signals */}
-                            <div className="rounded-xl border border-white/[0.04] bg-white/[0.015] p-4 space-y-2.5">
-                                <div className="text-[10px] text-white/15 uppercase tracking-widest font-medium mb-2">Why Us</div>
+                            <div className="rounded-xl border border-[var(--overlay-4)] bg-white/[0.015] p-4 space-y-2.5">
+                                <div className="text-[10px] text-[var(--overlay-15)] uppercase tracking-widest font-medium mb-2">Why Us</div>
                                 {[
                                     { icon: Shield, text: "NDA signed before every project" },
                                     { icon: Zap, text: "Proposal within 48 hours" },
                                     { icon: Check, text: "Milestone-based payments" },
                                 ].map((tp) => (
                                     <div key={tp.text} className="flex items-center gap-2">
-                                        <tp.icon className="w-3 h-3 text-white/10" />
-                                        <span className="text-[11px] text-white/20">{tp.text}</span>
+                                        <tp.icon className="w-3 h-3 text-[var(--overlay-10)]" />
+                                        <span className="text-[11px] text-[var(--overlay-20)]">{tp.text}</span>
                                     </div>
                                 ))}
                             </div>

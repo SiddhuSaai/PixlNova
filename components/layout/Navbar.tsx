@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Sparkles } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { NAV_LINKS, SITE } from "@/lib/constants"
 import { MobileMenu } from "./MobileMenu"
+import { ThemeToggle } from "@/components/ui/ThemeToggle"
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false)
@@ -75,14 +76,14 @@ export default function Navbar() {
                                 key={link.href}
                                 href={link.href}
                                 className={`relative px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-full ${activeSection === link.href
-                                    ? "text-white"
-                                    : "text-[var(--color-text-secondary)] hover:text-white"
+                                    ? "text-[var(--color-text-primary)]"
+                                    : "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
                                     }`}
                             >
                                 {activeSection === link.href && (
                                     <motion.div
                                         layoutId="activeNav"
-                                        className="absolute inset-0 bg-white/[0.08] rounded-full"
+                                        className="absolute inset-0 bg-[var(--overlay-8)] rounded-full"
                                         transition={{ type: "spring", stiffness: 300, damping: 30 }}
                                     />
                                 )}
@@ -92,17 +93,18 @@ export default function Navbar() {
                     </div>
 
                     {/* CTA + Mobile Toggle */}
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2">
+                        <ThemeToggle />
                         <a
                             href="#contact"
-                            className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white rounded-full bg-gradient-to-r from-[var(--color-brand-500)] to-[var(--color-accent-cyan)] hover:shadow-[var(--shadow-glow)] transition-shadow duration-300"
+                            className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-[var(--color-text-primary)] rounded-full bg-gradient-to-r from-[var(--color-brand-500)] to-[var(--color-accent-cyan)] hover:shadow-[var(--shadow-glow)] transition-shadow duration-300"
                         >
                             Start a Project
                         </a>
 
                         <button
                             onClick={() => setMobileOpen(!mobileOpen)}
-                            className="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
+                            className="lg:hidden p-2 rounded-lg hover:bg-[var(--overlay-10)] transition-colors"
                             aria-label="Toggle menu"
                         >
                             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

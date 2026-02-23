@@ -33,14 +33,14 @@ export default function FAQ() {
                 >
                     {/* ── Header ── */}
                     <motion.div variants={fadeUp} className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/[0.06] bg-white/[0.02] mb-6">
-                            <HelpCircle className="w-3.5 h-3.5 text-white/30" />
-                            <span className="text-[11px] sm:text-[12px] text-white/35 font-medium uppercase tracking-widest">FAQ</span>
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--overlay-6)] bg-[var(--overlay-2)] mb-6">
+                            <HelpCircle className="w-3.5 h-3.5 text-[var(--overlay-30)]" />
+                            <span className="text-[11px] sm:text-[12px] text-[var(--overlay-35)] font-medium uppercase tracking-widest">FAQ</span>
                         </div>
-                        <h2 className="font-bold text-white" style={{ fontSize: "var(--font-size-h2)" }}>
+                        <h2 className="font-bold text-[var(--color-text-primary)]" style={{ fontSize: "var(--font-size-h2)" }}>
                             Got Questions? <span className="gradient-text">We&apos;ve Got Answers</span>
                         </h2>
-                        <p className="mt-4 text-white/35 text-[15px] sm:text-[17px] leading-relaxed max-w-xl mx-auto">
+                        <p className="mt-4 text-[var(--overlay-35)] text-[15px] sm:text-[17px] leading-relaxed max-w-xl mx-auto">
                             Everything you need to know about working with us. Can&apos;t find what you&apos;re looking for? Just reach out.
                         </p>
                     </motion.div>
@@ -51,13 +51,13 @@ export default function FAQ() {
                         <div className="lg:sticky lg:top-28 lg:self-start">
                             {/* Search */}
                             <div className="relative mb-4">
-                                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/20" />
+                                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-[var(--overlay-20)]" />
                                 <input
                                     type="text"
                                     value={search}
                                     onChange={(e) => { setSearch(e.target.value); setOpenIndex(null) }}
                                     placeholder="Search..."
-                                    className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-white/[0.06] bg-white/[0.02] text-[13px] text-white placeholder:text-white/20 focus:outline-none focus:border-white/[0.12] transition-all duration-300"
+                                    className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-[var(--overlay-6)] bg-[var(--overlay-2)] text-[13px] text-[var(--color-text-primary)] placeholder:text-[var(--overlay-20)] focus:outline-none focus:border-[var(--overlay-12)] transition-all duration-300"
                                 />
                             </div>
 
@@ -66,8 +66,8 @@ export default function FAQ() {
                                 <button
                                     onClick={() => { setActiveCategory("all"); setOpenIndex(null) }}
                                     className={`text-left px-3 py-2 rounded-lg text-[12px] font-medium transition-all duration-300 ${activeCategory === "all"
-                                        ? "text-white bg-white/[0.05] border border-white/[0.1]"
-                                        : "text-white/25 hover:text-white/50 border border-transparent"
+                                        ? "text-[var(--color-text-primary)] bg-[var(--overlay-5)] border border-white/[0.1]"
+                                        : "text-[var(--overlay-25)] hover:text-[var(--overlay-50)] border border-transparent"
                                         }`}
                                 >
                                     All Questions ({faqs.length})
@@ -79,27 +79,27 @@ export default function FAQ() {
                                             key={cat.key}
                                             onClick={() => { setActiveCategory(cat.key); setOpenIndex(null) }}
                                             className={`text-left px-3 py-2 rounded-lg text-[12px] font-medium transition-all duration-300 flex items-center gap-2 ${activeCategory === cat.key
-                                                ? "text-white bg-white/[0.05] border border-white/[0.1]"
-                                                : "text-white/25 hover:text-white/50 border border-transparent"
+                                                ? "text-[var(--color-text-primary)] bg-[var(--overlay-5)] border border-white/[0.1]"
+                                                : "text-[var(--overlay-25)] hover:text-[var(--overlay-50)] border border-transparent"
                                                 }`}
                                         >
                                             <span className="text-[13px]">{cat.emoji}</span>
                                             <span>{cat.label}</span>
-                                            <span className="text-white/15 ml-auto text-[10px]">{count}</span>
+                                            <span className="text-[var(--overlay-15)] ml-auto text-[10px]">{count}</span>
                                         </button>
                                     )
                                 })}
                             </div>
 
                             {/* Quick contact */}
-                            <div className="hidden lg:block mt-6 p-4 rounded-xl border border-white/[0.06] bg-white/[0.02]">
-                                <p className="text-[11px] text-white/20 leading-relaxed mb-3">
+                            <div className="hidden lg:block mt-6 p-4 rounded-xl border border-[var(--overlay-6)] bg-[var(--overlay-2)]">
+                                <p className="text-[11px] text-[var(--overlay-20)] leading-relaxed mb-3">
                                     Still have questions?
                                     We&apos;re happy to help.
                                 </p>
                                 <a
                                     href="#contact"
-                                    className="inline-flex items-center gap-1.5 text-[11px] font-medium text-white/40 hover:text-white/70 transition-colors"
+                                    className="inline-flex items-center gap-1.5 text-[11px] font-medium text-[var(--overlay-40)] hover:text-[var(--overlay-70)] transition-colors"
                                 >
                                     Talk to us <ArrowRight className="w-3 h-3" />
                                 </a>
@@ -119,11 +119,11 @@ export default function FAQ() {
                                 >
                                     {filtered.length === 0 ? (
                                         <div className="text-center py-12">
-                                            <HelpCircle className="w-8 h-8 text-white/10 mx-auto mb-3" />
-                                            <p className="text-[13px] text-white/25">No matching questions found.</p>
+                                            <HelpCircle className="w-8 h-8 text-[var(--overlay-10)] mx-auto mb-3" />
+                                            <p className="text-[13px] text-[var(--overlay-25)]">No matching questions found.</p>
                                             <button
                                                 onClick={() => { setSearch(""); setActiveCategory("all") }}
-                                                className="mt-2 text-[12px] text-white/40 hover:text-white/60 underline underline-offset-2 transition-colors"
+                                                className="mt-2 text-[12px] text-[var(--overlay-40)] hover:text-[var(--overlay-60)] underline underline-offset-2 transition-colors"
                                             >
                                                 Clear filters
                                             </button>
@@ -138,7 +138,7 @@ export default function FAQ() {
                                                     key={faq.question}
                                                     className={`rounded-xl border overflow-hidden transition-all duration-400 ${isOpen
                                                         ? "border-white/[0.1] bg-white/[0.025]"
-                                                        : "border-white/[0.04] bg-transparent hover:border-white/[0.08]"
+                                                        : "border-[var(--overlay-4)] bg-transparent hover:border-[var(--overlay-8)]"
                                                         }`}
                                                 >
                                                     <button
@@ -147,20 +147,20 @@ export default function FAQ() {
                                                     >
                                                         {/* Number */}
                                                         <span className={`text-[10px] font-bold w-5 h-5 rounded-md flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen
-                                                            ? "bg-white/[0.08] text-white/50"
-                                                            : "bg-white/[0.03] text-white/15"
+                                                            ? "bg-[var(--overlay-8)] text-[var(--overlay-50)]"
+                                                            : "bg-[var(--overlay-3)] text-[var(--overlay-15)]"
                                                             }`}>
                                                             {String(i + 1).padStart(2, "0")}
                                                         </span>
 
-                                                        <span className={`text-[13px] sm:text-[14px] font-medium flex-1 transition-colors duration-300 ${isOpen ? "text-white" : "text-white/50 group-hover:text-white/70"
+                                                        <span className={`text-[13px] sm:text-[14px] font-medium flex-1 transition-colors duration-300 ${isOpen ? "text-[var(--color-text-primary)]" : "text-[var(--overlay-50)] group-hover:text-[var(--overlay-70)]"
                                                             }`}>
                                                             {faq.question}
                                                         </span>
 
                                                         {/* Category tag (mobile hidden) */}
                                                         {cat && (
-                                                            <span className="hidden sm:inline text-[9px] text-white/15 uppercase tracking-wider font-medium px-2 py-0.5 rounded-full border border-white/[0.04] shrink-0">
+                                                            <span className="hidden sm:inline text-[9px] text-[var(--overlay-15)] uppercase tracking-wider font-medium px-2 py-0.5 rounded-full border border-[var(--overlay-4)] shrink-0">
                                                                 {cat.emoji} {cat.label}
                                                             </span>
                                                         )}
@@ -170,7 +170,7 @@ export default function FAQ() {
                                                             transition={{ duration: 0.3 }}
                                                             className="shrink-0"
                                                         >
-                                                            <ChevronDown className={`w-4 h-4 transition-colors duration-300 ${isOpen ? "text-white/40" : "text-white/10"
+                                                            <ChevronDown className={`w-4 h-4 transition-colors duration-300 ${isOpen ? "text-[var(--overlay-40)]" : "text-[var(--overlay-10)]"
                                                                 }`} />
                                                         </motion.div>
                                                     </button>
@@ -184,7 +184,7 @@ export default function FAQ() {
                                                                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                                                             >
                                                                 <div className="px-4 pb-4 pl-12">
-                                                                    <p className="text-[13px] text-white/30 leading-relaxed">
+                                                                    <p className="text-[13px] text-[var(--overlay-30)] leading-relaxed">
                                                                         {faq.answer}
                                                                     </p>
                                                                 </div>
@@ -204,7 +204,7 @@ export default function FAQ() {
                     <motion.div variants={fadeUp} className="mt-8 text-center lg:hidden">
                         <a
                             href="#contact"
-                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/[0.06] bg-white/[0.02] text-[12px] text-white/30 hover:text-white/60 hover:border-white/[0.12] transition-all duration-300"
+                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--overlay-6)] bg-[var(--overlay-2)] text-[12px] text-[var(--overlay-30)] hover:text-[var(--overlay-60)] hover:border-[var(--overlay-12)] transition-all duration-300"
                         >
                             Still have questions? Talk to us
                             <ArrowRight className="w-3 h-3" />

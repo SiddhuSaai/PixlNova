@@ -36,7 +36,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
                         key={link.href}
                         href={link.href}
                         onClick={onClose}
-                        className="text-3xl font-bold text-white/90 hover:text-white transition-colors"
+                        className="text-3xl font-bold text-white/90 hover:text-[var(--color-text-primary)] transition-colors"
                         variants={{
                             open: { opacity: 1, y: 0, filter: "blur(0px)" },
                             closed: { opacity: 0, y: 30, filter: "blur(10px)" },
@@ -50,7 +50,7 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
                 <motion.a
                     href="#contact"
                     onClick={onClose}
-                    className="mt-4 px-8 py-4 text-lg font-semibold text-white rounded-full bg-gradient-to-r from-[var(--color-brand-500)] to-[var(--color-accent-cyan)]"
+                    className="mt-4 px-8 py-4 text-lg font-semibold text-[var(--color-text-primary)] rounded-full bg-gradient-to-r from-[var(--color-brand-500)] to-[var(--color-accent-cyan)]"
                     variants={{
                         open: { opacity: 1, y: 0, scale: 1 },
                         closed: { opacity: 0, y: 20, scale: 0.9 },

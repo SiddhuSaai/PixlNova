@@ -64,7 +64,7 @@ export default function ChatBot() {
                     }}
                     aria-label="Chat with Nova AI"
                 >
-                    <MessageSquareText className="w-5 h-5 text-white" />
+                    <MessageSquareText className="w-5 h-5 text-[var(--color-text-primary)]" />
 
                     {pulse && (
                         <motion.div
@@ -72,7 +72,7 @@ export default function ChatBot() {
                             animate={{ scale: 1 }}
                             className="absolute -top-0.5 -right-0.5 w-[18px] h-[18px] rounded-full bg-red-500 border-[2.5px] border-[var(--color-bg-primary)] flex items-center justify-center"
                         >
-                            <span className="text-[9px] text-white font-bold leading-none">1</span>
+                            <span className="text-[9px] text-[var(--color-text-primary)] font-bold leading-none">1</span>
                         </motion.div>
                     )}
                 </Link>

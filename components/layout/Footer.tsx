@@ -39,18 +39,18 @@ const stats = [
 
 export default function Footer() {
     return (
-        <footer className="relative border-t border-white/[0.04]">
+        <footer className="relative border-t border-[var(--overlay-4)]">
             {/* Subtle top glow */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
 
             <div className="section-container">
                 {/* ── Stats strip ── */}
-                <div className="py-8 sm:py-10 border-b border-white/[0.04]">
+                <div className="py-8 sm:py-10 border-b border-[var(--overlay-4)]">
                     <div className="flex flex-row flex-nowrap items-center justify-between max-w-lg mx-auto">
                         {stats.map((stat) => (
                             <div key={stat.label} className="text-center px-2">
-                                <div className="text-lg sm:text-xl font-extrabold text-white/50">{stat.value}</div>
-                                <div className="text-[9px] sm:text-[10px] text-white/12 uppercase tracking-widest font-medium">{stat.label}</div>
+                                <div className="text-lg sm:text-xl font-extrabold text-[var(--overlay-50)]">{stat.value}</div>
+                                <div className="text-[9px] sm:text-[10px] text-[var(--overlay-12)] uppercase tracking-widest font-medium">{stat.label}</div>
                             </div>
                         ))}
                     </div>
@@ -62,23 +62,23 @@ export default function Footer() {
                     <div className="space-y-5">
                         <div className="flex items-center gap-2.5">
                             <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[var(--color-brand-500)] to-[oklch(0.7_0.18_200)] flex items-center justify-center">
-                                <span className="text-white text-[11px] font-bold">P</span>
+                                <span className="text-[var(--color-text-primary)] text-[11px] font-bold">P</span>
                             </div>
-                            <span className="text-lg font-bold text-white">{SITE.name}</span>
+                            <span className="text-lg font-bold text-[var(--color-text-primary)]">{SITE.name}</span>
                         </div>
 
-                        <p className="text-[13px] text-white/20 max-w-[280px] leading-relaxed">
+                        <p className="text-[13px] text-[var(--overlay-20)] max-w-[280px] leading-relaxed">
                             {SITE.description}
                         </p>
 
-                        <div className="flex items-center gap-1.5 text-[11px] text-white/12">
+                        <div className="flex items-center gap-1.5 text-[11px] text-[var(--overlay-12)]">
                             <MapPin className="w-3 h-3" />
                             <span>Global · Remote-first · All timezones</span>
                         </div>
 
                         <a
                             href={`mailto:${SITE.email}`}
-                            className="inline-flex items-center gap-1.5 text-[12px] text-white/25 hover:text-white/60 transition-colors duration-300"
+                            className="inline-flex items-center gap-1.5 text-[12px] text-[var(--overlay-25)] hover:text-[var(--overlay-60)] transition-colors duration-300"
                         >
                             <Mail className="w-3.5 h-3.5" />
                             {SITE.email}
@@ -92,7 +92,7 @@ export default function Footer() {
                                     href={link.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-8 h-8 rounded-lg border border-white/[0.04] bg-white/[0.015] flex items-center justify-center text-white/15 hover:text-white/50 hover:border-white/[0.1] hover:bg-white/[0.03] transition-all duration-300"
+                                    className="w-8 h-8 rounded-lg border border-[var(--overlay-4)] bg-white/[0.015] flex items-center justify-center text-[var(--overlay-15)] hover:text-[var(--overlay-50)] hover:border-white/[0.1] hover:bg-[var(--overlay-3)] transition-all duration-300"
                                     aria-label={link.label}
                                 >
                                     {socialIcons[link.icon] || <ArrowUpRight className="w-3.5 h-3.5" />}
@@ -104,7 +104,7 @@ export default function Footer() {
                     {/* Link columns */}
                     {Object.entries(footerLinks).map(([category, links]) => (
                         <div key={category}>
-                            <h3 className="text-[10px] font-semibold tracking-widest uppercase text-white/20 mb-4">
+                            <h3 className="text-[10px] font-semibold tracking-widest uppercase text-[var(--overlay-20)] mb-4">
                                 {category}
                             </h3>
                             <ul className="space-y-2.5">
@@ -112,7 +112,7 @@ export default function Footer() {
                                     <li key={link.label}>
                                         <a
                                             href={link.href}
-                                            className="group flex items-center gap-1 text-[12px] text-white/20 hover:text-white/55 transition-colors duration-200"
+                                            className="group flex items-center gap-1 text-[12px] text-[var(--overlay-20)] hover:text-[var(--overlay-50)] transition-colors duration-200"
                                         >
                                             {link.label}
                                             <ArrowUpRight className="w-2.5 h-2.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
@@ -125,15 +125,15 @@ export default function Footer() {
                 </div>
 
                 {/* ── CTA strip ── */}
-                <div className="py-6 border-t border-b border-white/[0.04]">
+                <div className="py-6 border-t border-b border-[var(--overlay-4)]">
                     <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                         <div>
-                            <p className="text-[13px] text-white/30 font-medium">Ready to start?</p>
-                            <p className="text-[11px] text-white/12">Free consultation · No commitment · NDA protected</p>
+                            <p className="text-[13px] text-[var(--overlay-30)] font-medium">Ready to start?</p>
+                            <p className="text-[11px] text-[var(--overlay-12)]">Free consultation · No commitment · NDA protected</p>
                         </div>
                         <a
                             href="#contact"
-                            className="group inline-flex items-center gap-2 px-5 py-2.5 text-[12px] font-semibold text-white rounded-full bg-gradient-to-r from-[var(--color-brand-500)] to-[oklch(0.65_0.22_280)] hover:shadow-[0_4px_24px_-4px_rgba(139,92,246,0.3)] hover:-translate-y-0.5 transition-all duration-300"
+                            className="group inline-flex items-center gap-2 px-5 py-2.5 text-[12px] font-semibold text-[var(--color-text-primary)] rounded-full bg-gradient-to-r from-[var(--color-brand-500)] to-[oklch(0.65_0.22_280)] hover:shadow-[0_4px_24px_-4px_rgba(139,92,246,0.3)] hover:-translate-y-0.5 transition-all duration-300"
                         >
                             <Zap className="w-3 h-3" />
                             Get a Free Quote
@@ -144,10 +144,10 @@ export default function Footer() {
 
                 {/* ── Bottom bar ── */}
                 <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-                    <p className="text-[11px] text-white/10">
+                    <p className="text-[11px] text-[var(--overlay-10)]">
                         © {new Date().getFullYear()} {SITE.name}. All rights reserved.
                     </p>
-                    <p className="text-[11px] text-white/10 flex items-center gap-1">
+                    <p className="text-[11px] text-[var(--overlay-10)] flex items-center gap-1">
                         Crafted with <Heart className="w-2.5 h-2.5 text-red-400/30" /> and too much <Coffee className="w-2.5 h-2.5 text-amber-400/30" />
                     </p>
                 </div>

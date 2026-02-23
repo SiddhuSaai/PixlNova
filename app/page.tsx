@@ -23,7 +23,7 @@ function SectionSkeleton() {
 
 export default function Home() {
   return (
-    <main id="main-content" className="relative bg-[var(--color-bg-primary)] text-white overflow-x-hidden antialiased">
+    <main id="main-content" className="relative bg-[var(--color-bg-primary)] text-[var(--color-text-primary)] overflow-x-hidden antialiased">
       <Navbar />
 
       {/* ── Above the Fold ── */}

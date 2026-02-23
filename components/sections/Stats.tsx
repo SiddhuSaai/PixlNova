@@ -61,7 +61,7 @@ function RadialProgress({ progress, accent }: { progress: number; accent: string
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="3"
-                className="text-white/[0.06]"
+                className="text-[var(--overlay-6)]"
             />
             {/* Progress Arc */}
             <motion.circle
@@ -119,7 +119,7 @@ export default function Stats() {
 
                                 {/* Content */}
                                 <div
-                                    className="relative h-full flex flex-col items-center justify-center text-center p-6 lg:p-8 rounded-2xl border border-white/[0.06] bg-[oklch(0.10_0.015_280)] group-hover:bg-[oklch(0.12_0.02_280)] transition-all duration-500"
+                                    className="relative h-full flex flex-col items-center justify-center text-center p-6 lg:p-8 rounded-2xl border border-[var(--overlay-6)] bg-[oklch(0.10_0.015_280)] group-hover:bg-[oklch(0.12_0.02_280)] transition-all duration-500"
                                 >
                                     {/* Hover glow behind icon */}
                                     <div
@@ -136,7 +136,7 @@ export default function Stats() {
                                         {/* Icon centered */}
                                         <div className="absolute inset-0 flex items-center justify-center">
                                             <div
-                                                className="w-11 h-11 rounded-xl bg-white/[0.04] flex items-center justify-center group-hover:scale-110 transition-transform duration-500"
+                                                className="w-11 h-11 rounded-xl bg-[var(--overlay-4)] flex items-center justify-center group-hover:scale-110 transition-transform duration-500"
                                             >
                                                 <stat.icon className="w-5 h-5" style={{ color: stat.accent }} />
                                             </div>
@@ -154,8 +154,8 @@ export default function Stats() {
                                     </div>
 
                                     {/* Label */}
-                                    <p className="text-sm font-semibold text-white/80 mb-0.5">{stat.label}</p>
-                                    <p className="text-xs text-white/30">{stat.description}</p>
+                                    <p className="text-sm font-semibold text-[var(--overlay-80)] mb-0.5">{stat.label}</p>
+                                    <p className="text-xs text-[var(--overlay-30)]">{stat.description}</p>
                                 </div>
                             </div>
                         </motion.div>

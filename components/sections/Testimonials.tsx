@@ -15,7 +15,7 @@ function SpotlightCard({ testimonial }: { testimonial: Testimonial }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
-            className="relative rounded-2xl border border-white/[0.06] overflow-hidden"
+            className="relative rounded-2xl border border-[var(--overlay-6)] overflow-hidden"
         >
             {/* Ambient glow */}
             <div
@@ -37,7 +37,7 @@ function SpotlightCard({ testimonial }: { testimonial: Testimonial }) {
                     {/* Left: quote */}
                     <div>
                         <Quote className="w-6 h-6 mb-3 opacity-[0.08]" style={{ color: testimonial.color }} />
-                        <blockquote className="text-[15px] sm:text-lg lg:text-xl font-medium text-white/70 leading-relaxed mb-4">
+                        <blockquote className="text-[15px] sm:text-lg lg:text-xl font-medium text-[var(--overlay-70)] leading-relaxed mb-4">
                             &ldquo;{testimonial.quote}&rdquo;
                         </blockquote>
 
@@ -54,10 +54,10 @@ function SpotlightCard({ testimonial }: { testimonial: Testimonial }) {
                             </div>
                             <div>
                                 <div className="flex items-center gap-2">
-                                    <p className="text-[15px] font-semibold text-white">{testimonial.name}</p>
+                                    <p className="text-[15px] font-semibold text-[var(--color-text-primary)]">{testimonial.name}</p>
                                     <span className="text-sm">{testimonial.flag}</span>
                                 </div>
-                                <p className="text-[13px] text-white/30">
+                                <p className="text-[13px] text-[var(--overlay-30)]">
                                     {testimonial.role}, {testimonial.company}
                                 </p>
                             </div>
@@ -67,9 +67,9 @@ function SpotlightCard({ testimonial }: { testimonial: Testimonial }) {
                     {/* Right: stats + meta */}
                     <div className="flex flex-col gap-4">
                         {/* Project type */}
-                        <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-3 text-center">
-                            <div className="text-[10px] text-white/20 uppercase tracking-widest font-medium mb-1">Project</div>
-                            <div className="text-[14px] font-semibold text-white/60">{testimonial.project}</div>
+                        <div className="rounded-xl border border-[var(--overlay-6)] bg-[var(--overlay-2)] p-3 text-center">
+                            <div className="text-[10px] text-[var(--overlay-20)] uppercase tracking-widest font-medium mb-1">Project</div>
+                            <div className="text-[14px] font-semibold text-[var(--overlay-60)]">{testimonial.project}</div>
                         </div>
 
                         {/* Metric highlight */}
@@ -87,20 +87,20 @@ function SpotlightCard({ testimonial }: { testimonial: Testimonial }) {
                                 >
                                     {testimonial.metric.value}
                                 </div>
-                                <div className="text-[11px] text-white/25 uppercase tracking-wider font-medium">
+                                <div className="text-[11px] text-[var(--overlay-25)] uppercase tracking-wider font-medium">
                                     {testimonial.metric.label}
                                 </div>
                             </div>
                         )}
 
                         {/* Rating */}
-                        <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-4 text-center">
+                        <div className="rounded-xl border border-[var(--overlay-6)] bg-[var(--overlay-2)] p-4 text-center">
                             <div className="flex items-center justify-center gap-0.5 mb-1">
                                 {Array.from({ length: testimonial.rating }).map((_, i) => (
                                     <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                                 ))}
                             </div>
-                            <div className="text-[10px] text-white/20 uppercase tracking-widest font-medium">Client Rating</div>
+                            <div className="text-[10px] text-[var(--overlay-20)] uppercase tracking-widest font-medium">Client Rating</div>
                         </div>
                     </div>
                 </div>
@@ -115,8 +115,8 @@ function MiniCard({ testimonial, isActive, onClick }: { testimonial: Testimonial
         <button
             onClick={onClick}
             className={`text-left relative rounded-xl border p-4 transition-all duration-400 group ${isActive
-                ? "border-white/[0.12] bg-white/[0.03]"
-                : "border-white/[0.04] bg-transparent hover:border-white/[0.08] hover:bg-white/[0.015]"
+                ? "border-[var(--overlay-12)] bg-[var(--overlay-3)]"
+                : "border-[var(--overlay-4)] bg-transparent hover:border-[var(--overlay-8)] hover:bg-white/[0.015]"
                 }`}
         >
             {isActive && (
@@ -128,7 +128,7 @@ function MiniCard({ testimonial, isActive, onClick }: { testimonial: Testimonial
                 />
             )}
             <div className="relative z-10">
-                <p className="text-[12px] text-white/30 leading-relaxed line-clamp-2 mb-3 group-hover:text-white/40 transition-colors">
+                <p className="text-[12px] text-[var(--overlay-30)] leading-relaxed line-clamp-2 mb-3 group-hover:text-[var(--overlay-40)] transition-colors">
                     &ldquo;{testimonial.quote.slice(0, 80)}...&rdquo;
                 </p>
                 <div className="flex items-center gap-2">
@@ -142,8 +142,8 @@ function MiniCard({ testimonial, isActive, onClick }: { testimonial: Testimonial
                         {testimonial.name.charAt(0)}
                     </div>
                     <div>
-                        <p className="text-[11px] font-semibold text-white/60">{testimonial.name}</p>
-                        <p className="text-[9px] text-white/20">{testimonial.company} · {testimonial.flag}</p>
+                        <p className="text-[11px] font-semibold text-[var(--overlay-60)]">{testimonial.name}</p>
+                        <p className="text-[9px] text-[var(--overlay-20)]">{testimonial.company} · {testimonial.flag}</p>
                     </div>
                 </div>
             </div>
@@ -179,14 +179,14 @@ export default function Testimonials() {
                 >
                     {/* ── Header ── */}
                     <motion.div variants={fadeUp} className="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/[0.06] bg-white/[0.02] mb-6">
-                            <MessageSquareQuote className="w-3.5 h-3.5 text-white/30" />
-                            <span className="text-[11px] sm:text-[12px] text-white/35 font-medium uppercase tracking-widest">Testimonials</span>
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--overlay-6)] bg-[var(--overlay-2)] mb-6">
+                            <MessageSquareQuote className="w-3.5 h-3.5 text-[var(--overlay-30)]" />
+                            <span className="text-[11px] sm:text-[12px] text-[var(--overlay-35)] font-medium uppercase tracking-widest">Testimonials</span>
                         </div>
-                        <h2 className="font-bold text-white" style={{ fontSize: "var(--font-size-h2)" }}>
+                        <h2 className="font-bold text-[var(--color-text-primary)]" style={{ fontSize: "var(--font-size-h2)" }}>
                             Trusted by <span className="gradient-text">150+ Businesses</span>
                         </h2>
-                        <p className="mt-4 text-white/35 text-[15px] sm:text-[17px] leading-relaxed max-w-xl mx-auto">
+                        <p className="mt-4 text-[var(--overlay-35)] text-[15px] sm:text-[17px] leading-relaxed max-w-xl mx-auto">
                             Real results from real clients — across 6 continents, from seed-stage startups to enterprise teams.
                         </p>
                     </motion.div>
@@ -205,13 +205,13 @@ export default function Testimonials() {
                             <div className="flex items-center gap-2">
                                 <button
                                     onClick={goPrev}
-                                    className="w-8 h-8 rounded-full border border-white/[0.06] flex items-center justify-center text-white/25 hover:text-white/60 hover:border-white/[0.12] transition-all"
+                                    className="w-8 h-8 rounded-full border border-[var(--overlay-6)] flex items-center justify-center text-[var(--overlay-25)] hover:text-[var(--overlay-60)] hover:border-[var(--overlay-12)] transition-all"
                                 >
                                     <ChevronLeft className="w-4 h-4" />
                                 </button>
                                 <button
                                     onClick={goNext}
-                                    className="w-8 h-8 rounded-full border border-white/[0.06] flex items-center justify-center text-white/25 hover:text-white/60 hover:border-white/[0.12] transition-all"
+                                    className="w-8 h-8 rounded-full border border-[var(--overlay-6)] flex items-center justify-center text-[var(--overlay-25)] hover:text-[var(--overlay-60)] hover:border-[var(--overlay-12)] transition-all"
                                 >
                                     <ChevronRight className="w-4 h-4" />
                                 </button>
@@ -226,7 +226,7 @@ export default function Testimonials() {
                                         className="relative h-1.5 rounded-full overflow-hidden transition-all duration-300"
                                         style={{ width: i === activeIndex ? 24 : 8 }}
                                     >
-                                        <div className="absolute inset-0 bg-white/[0.06] rounded-full" />
+                                        <div className="absolute inset-0 bg-[var(--overlay-6)] rounded-full" />
                                         {i === activeIndex && (
                                             <motion.div
                                                 initial={{ width: 0 }}
@@ -266,8 +266,8 @@ export default function Testimonials() {
                             { value: "98%", label: "Retention Rate" },
                         ].map((stat) => (
                             <div key={stat.label} className="text-center">
-                                <div className="text-lg sm:text-xl font-extrabold text-white/70">{stat.value}</div>
-                                <div className="text-[10px] text-white/15 uppercase tracking-wider font-medium">{stat.label}</div>
+                                <div className="text-lg sm:text-xl font-extrabold text-[var(--overlay-70)]">{stat.value}</div>
+                                <div className="text-[10px] text-[var(--overlay-15)] uppercase tracking-wider font-medium">{stat.label}</div>
                             </div>
                         ))}
                     </motion.div>

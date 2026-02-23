@@ -113,7 +113,7 @@ export default function Hero() {
                 <div
                     className="absolute inset-0 opacity-[0.03]"
                     style={{
-                        backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1px)`,
+                        backgroundImage: `radial-gradient(circle, var(--overlay-50) 1px, transparent 1px)`,
                         backgroundSize: "32px 32px",
                     }}
                 />
@@ -154,7 +154,7 @@ export default function Hero() {
                         <motion.div
                             animate={{ y: [0, -6, 0] }}
                             transition={{ duration: 3 + Math.random() * 2, repeat: Infinity, ease: "easeInOut", delay: Math.random() * 2 }}
-                            className="px-3 py-1.5 rounded-full border border-white/[0.08] bg-white/[0.03] backdrop-blur-md text-[11px] text-white/30 font-medium"
+                            className="px-3 py-1.5 rounded-full border border-[var(--overlay-8)] bg-[var(--overlay-3)] backdrop-blur-md text-[11px] text-[var(--overlay-30)] font-medium"
                         >
                             {t.label}
                         </motion.div>
@@ -173,14 +173,14 @@ export default function Hero() {
                     {/* Eyebrow */}
                     <motion.div
                         variants={fadeUp}
-                        className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-white/[0.08] bg-white/[0.03] mb-5 sm:mb-8"
+                        className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-[var(--overlay-8)] bg-[var(--overlay-3)] mb-5 sm:mb-8"
                     >
                         <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                         </span>
-                        <span className="text-[11px] sm:text-[13px] text-white/50 font-medium">
-                            Open for projects — <span className="text-white/70">Let&apos;s build</span>
+                        <span className="text-[11px] sm:text-[13px] text-[var(--overlay-50)] font-medium">
+                            Open for projects — <span className="text-[var(--overlay-70)]">Let&apos;s build</span>
                         </span>
                     </motion.div>
 
@@ -189,11 +189,11 @@ export default function Hero() {
                         variants={fadeUp}
                         className="font-bold tracking-tight leading-[1.08] text-[clamp(2rem,7vw,5.5rem)]"
                     >
-                        <span className="text-white">We Build Digital</span>
+                        <span className="text-[var(--color-text-primary)]">We Build Digital</span>
                         <br />
-                        <span className="text-white">Products That</span>
+                        <span className="text-[var(--color-text-primary)]">Products That</span>
                         <br className="sm:hidden" />
-                        <span className="hidden sm:inline text-white"> </span>
+                        <span className="hidden sm:inline text-[var(--color-text-primary)]"> </span>
                         <span
                             className="inline-block"
                             style={{
@@ -211,11 +211,11 @@ export default function Hero() {
                     {/* Subheadline */}
                     <motion.p
                         variants={fadeUp}
-                        className="mt-4 sm:mt-6 text-white/40 max-w-2xl leading-relaxed text-[14px] sm:text-[17px]"
+                        className="mt-4 sm:mt-6 text-[var(--overlay-40)] max-w-2xl leading-relaxed text-[14px] sm:text-[17px]"
                     >
                         From MVPs to enterprise platforms — Web, iOS, Android & macOS.
-                        Trusted by <span className="text-white/60 font-medium">150+ businesses</span> across{" "}
-                        <span className="text-white/60 font-medium">40+ countries</span>.
+                        Trusted by <span className="text-[var(--overlay-60)] font-medium">150+ businesses</span> across{" "}
+                        <span className="text-[var(--overlay-60)] font-medium">40+ countries</span>.
                     </motion.p>
 
                     {/* CTAs */}
@@ -223,7 +223,7 @@ export default function Hero() {
                         <MagneticButton
                             as="a"
                             href="#contact"
-                            className="inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 text-[14px] sm:text-[15px] font-semibold text-white rounded-full transition-all duration-300"
+                            className="inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 text-[14px] sm:text-[15px] font-semibold text-[var(--color-text-primary)] rounded-full transition-all duration-300"
                             style={{
                                 background: "linear-gradient(135deg, oklch(0.50 0.25 285), oklch(0.55 0.20 250), oklch(0.60 0.18 220))",
                                 boxShadow: "0 8px 32px -6px oklch(0.50 0.25 285 / 0.4), inset 0 1px 0 oklch(1 0 0 / 0.1)",
@@ -233,7 +233,7 @@ export default function Hero() {
                         </MagneticButton>
                         <a
                             href="#portfolio"
-                            className="inline-flex items-center gap-2 px-5 py-3 sm:px-6 sm:py-4 text-[14px] sm:text-[15px] font-medium text-white/45 hover:text-white transition-colors rounded-full border border-white/[0.08] hover:border-white/[0.16]"
+                            className="inline-flex items-center gap-2 px-5 py-3 sm:px-6 sm:py-4 text-[14px] sm:text-[15px] font-medium text-[var(--overlay-45)] hover:text-[var(--color-text-primary)] transition-colors rounded-full border border-[var(--overlay-8)] hover:border-[var(--overlay-15)]"
                         >
                             View Our Work
                             <ArrowRight className="w-4 h-4" />
@@ -246,10 +246,10 @@ export default function Hero() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 1.4 }}
-                            className="mt-5 sm:mt-8 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/[0.06] bg-white/[0.02]"
+                            className="mt-5 sm:mt-8 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--overlay-6)] bg-[var(--overlay-2)]"
                         >
                             <span className="text-sm">{geo.flag}</span>
-                            <span className="text-[11px] sm:text-[13px] text-white/30">
+                            <span className="text-[11px] sm:text-[13px] text-[var(--overlay-30)]">
                                 Prices for {geo.country} ({geo.currency})
                             </span>
                         </motion.div>
@@ -268,8 +268,8 @@ export default function Hero() {
                                 transition={{ delay: 1.1 + i * 0.08 }}
                                 className="flex flex-col"
                             >
-                                <span className="text-lg sm:text-2xl font-bold text-white tracking-tight">{s.value}</span>
-                                <span className="text-[9px] sm:text-[11px] text-white/25 font-medium mt-0.5 leading-tight">{s.label}</span>
+                                <span className="text-lg sm:text-2xl font-bold text-[var(--color-text-primary)] tracking-tight">{s.value}</span>
+                                <span className="text-[9px] sm:text-[11px] text-[var(--overlay-25)] font-medium mt-0.5 leading-tight">{s.label}</span>
                             </motion.div>
                         ))}
                     </motion.div>
@@ -285,12 +285,12 @@ export default function Hero() {
                             {[...Array(5)].map((_, i) => (
                                 <Star key={i} className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-500 fill-amber-500" />
                             ))}
-                            <span className="text-[10px] sm:text-[11px] text-white/25 ml-1">5.0</span>
+                            <span className="text-[10px] sm:text-[11px] text-[var(--overlay-25)] ml-1">5.0</span>
                         </div>
-                        <div className="h-3 w-px bg-white/[0.08]" />
+                        <div className="h-3 w-px bg-[var(--overlay-8)]" />
                         <div className="flex items-center gap-3 sm:gap-4 overflow-hidden">
                             {CLIENTS.map((c) => (
-                                <span key={c} className="text-[9px] sm:text-[11px] text-white/15 font-medium tracking-wide uppercase whitespace-nowrap">
+                                <span key={c} className="text-[9px] sm:text-[11px] text-[var(--overlay-15)] font-medium tracking-wide uppercase whitespace-nowrap">
                                     {c}
                                 </span>
                             ))}
@@ -311,7 +311,7 @@ export default function Hero() {
                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                     className="flex flex-col items-center gap-1.5"
                 >
-                    <span className="text-[9px] uppercase tracking-[0.2em] text-white/20 font-medium">Scroll</span>
+                    <span className="text-[9px] uppercase tracking-[0.2em] text-[var(--overlay-20)] font-medium">Scroll</span>
                     <div className="w-4 h-7 rounded-full border border-white/[0.1] flex justify-center pt-1.5">
                         <motion.div
                             animate={{ y: [0, 6, 0], opacity: [1, 0.3, 1] }}

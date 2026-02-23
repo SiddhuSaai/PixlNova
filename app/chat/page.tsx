@@ -215,11 +215,11 @@ function StreamingText({ text, onComplete }: { text: string; onComplete?: () => 
             <ReactMarkdown
                 components={{
                     a: ({ href, children }) => (
-                        <a href={href} className="underline text-[var(--color-brand-400)] hover:text-white transition-colors">
+                        <a href={href} className="underline text-[var(--color-brand-400)] hover:text-[var(--color-text-primary)] transition-colors">
                             {children}
                         </a>
                     ),
-                    strong: ({ children }) => <strong className="text-white font-semibold">{children}</strong>,
+                    strong: ({ children }) => <strong className="text-[var(--color-text-primary)] font-semibold">{children}</strong>,
                 }}
             >
                 {partial}
@@ -238,11 +238,11 @@ function RenderedMarkdown({ text }: { text: string }) {
             <ReactMarkdown
                 components={{
                     a: ({ href, children }) => (
-                        <a href={href} className="underline text-[var(--color-brand-400)] hover:text-white transition-colors">
+                        <a href={href} className="underline text-[var(--color-brand-400)] hover:text-[var(--color-text-primary)] transition-colors">
                             {children}
                         </a>
                     ),
-                    strong: ({ children }) => <strong className="text-white font-semibold">{children}</strong>,
+                    strong: ({ children }) => <strong className="text-[var(--color-text-primary)] font-semibold">{children}</strong>,
                 }}
             >
                 {text}
@@ -310,25 +310,25 @@ export default function ChatPage() {
     const showSuggestions = msgs.length <= 1 && !typing
 
     return (
-        <div className="h-dvh flex bg-[var(--color-bg-primary)] text-white overflow-hidden">
+        <div className="h-dvh flex bg-[var(--color-bg-primary)] text-[var(--color-text-primary)] overflow-hidden">
             {/* ═══════════ SIDEBAR ═══════════ */}
-            <aside className="hidden lg:flex w-[280px] shrink-0 flex-col border-r border-white/[0.06] bg-[oklch(0.07_0.01_280)]">
+            <aside className="hidden lg:flex w-[280px] shrink-0 flex-col border-r border-[var(--overlay-6)] bg-[oklch(0.07_0.01_280)]">
                 {/* Logo */}
-                <div className="px-5 py-5 border-b border-white/[0.06]">
+                <div className="px-5 py-5 border-b border-[var(--overlay-6)]">
                     <Link href="/" className="flex items-center gap-2.5 group">
                         <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--color-brand-500)] to-[var(--color-accent-cyan)] flex items-center justify-center">
-                            <Sparkles className="w-4 h-4 text-white" />
+                            <Sparkles className="w-4 h-4 text-[var(--color-text-primary)]" />
                         </div>
                         <div>
-                            <span className="text-[15px] font-bold text-white tracking-tight">PixlNova</span>
-                            <span className="text-[10px] text-white/30 block -mt-0.5">AI Assistant</span>
+                            <span className="text-[15px] font-bold text-[var(--color-text-primary)] tracking-tight">PixlNova</span>
+                            <span className="text-[10px] text-[var(--overlay-30)] block -mt-0.5">AI Assistant</span>
                         </div>
                     </Link>
                 </div>
 
                 {/* Topics */}
                 <div className="flex-1 overflow-y-auto px-3 py-4">
-                    <p className="text-[10px] font-semibold text-white/20 uppercase tracking-[0.15em] px-2 mb-2">
+                    <p className="text-[10px] font-semibold text-[var(--overlay-20)] uppercase tracking-[0.15em] px-2 mb-2">
                         Topics
                     </p>
                     <div className="space-y-0.5">
@@ -336,10 +336,10 @@ export default function ChatPage() {
                             <button
                                 key={t.label}
                                 onClick={() => send(t.prompt)}
-                                className="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-left hover:bg-white/[0.04] transition-all group"
+                                className="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-left hover:bg-[var(--overlay-4)] transition-all group"
                             >
-                                <t.icon className="w-4 h-4 text-white/20 group-hover:text-[var(--color-brand-400)] transition-colors shrink-0" />
-                                <span className="text-[13px] text-white/45 group-hover:text-white/80 transition-colors truncate">
+                                <t.icon className="w-4 h-4 text-[var(--overlay-20)] group-hover:text-[var(--color-brand-400)] transition-colors shrink-0" />
+                                <span className="text-[13px] text-[var(--overlay-45)] group-hover:text-[var(--overlay-80)] transition-colors truncate">
                                     {t.label}
                                 </span>
                             </button>
@@ -348,10 +348,10 @@ export default function ChatPage() {
                 </div>
 
                 {/* Bottom */}
-                <div className="px-4 py-4 border-t border-white/[0.06]">
+                <div className="px-4 py-4 border-t border-[var(--overlay-6)]">
                     <Link
                         href="/"
-                        className="flex items-center gap-2 text-[12px] text-white/25 hover:text-white/50 transition-colors"
+                        className="flex items-center gap-2 text-[12px] text-[var(--overlay-25)] hover:text-[var(--overlay-50)] transition-colors"
                     >
                         <ArrowLeft className="w-3.5 h-3.5" />
                         Back to website
@@ -362,28 +362,28 @@ export default function ChatPage() {
             {/* ═══════════ MAIN ═══════════ */}
             <div className="flex-1 flex flex-col min-w-0">
                 {/* Header */}
-                <header className="shrink-0 flex items-center justify-between px-5 sm:px-8 py-4 border-b border-white/[0.06] bg-[oklch(0.07_0.01_280)]">
+                <header className="shrink-0 flex items-center justify-between px-5 sm:px-8 py-4 border-b border-[var(--overlay-6)] bg-[oklch(0.07_0.01_280)]">
                     <div className="flex items-center gap-3">
-                        <Link href="/" className="lg:hidden flex items-center gap-2 text-white/40 hover:text-white/70 transition-colors mr-2">
+                        <Link href="/" className="lg:hidden flex items-center gap-2 text-[var(--overlay-40)] hover:text-[var(--overlay-70)] transition-colors mr-2">
                             <ArrowLeft className="w-4 h-4" />
                         </Link>
                         <div className="relative">
                             <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[var(--color-brand-500)] to-[var(--color-accent-cyan)] flex items-center justify-center">
-                                <Bot className="w-4 h-4 text-white" />
+                                <Bot className="w-4 h-4 text-[var(--color-text-primary)]" />
                             </div>
                             <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-500 border-2 border-[oklch(0.07_0.01_280)]" />
                         </div>
                         <div>
-                            <h1 className="text-[15px] font-semibold text-white leading-tight">Nova AI Assistant</h1>
+                            <h1 className="text-[15px] font-semibold text-[var(--color-text-primary)] leading-tight">Nova AI Assistant</h1>
                             <div className="flex items-center gap-1.5">
                                 <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                                <span className="text-[11px] text-white/35">Always online · Replies instantly</span>
+                                <span className="text-[11px] text-[var(--overlay-35)]">Always online · Replies instantly</span>
                             </div>
                         </div>
                     </div>
                     <Link
                         href="/#contact"
-                        className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[12px] font-medium bg-[var(--color-brand-500)] text-white hover:brightness-110 transition-all"
+                        className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[12px] font-medium bg-[var(--color-brand-500)] text-[var(--color-text-primary)] hover:brightness-110 transition-all"
                     >
                         <MessageSquareText className="w-3.5 h-3.5" />
                         Talk to a human
@@ -404,21 +404,21 @@ export default function ChatPage() {
                                 <div className={`${m.role === "user" ? "max-w-[75%] text-right" : ""}`}>
                                     {m.role === "bot" ? (
                                         <>
-                                            <div className="text-[14px] leading-[1.7] text-white/60">
+                                            <div className="text-[14px] leading-[1.7] text-[var(--overlay-60)]">
                                                 {m.streaming ? (
                                                     <StreamingText text={m.text} onComplete={() => markStreamComplete(m.id)} />
                                                 ) : (
                                                     <RenderedMarkdown text={m.text} />
                                                 )}
                                             </div>
-                                            <p className="text-[10px] text-white/15 mt-1.5">{fmt(m.ts)}</p>
+                                            <p className="text-[10px] text-[var(--overlay-15)] mt-1.5">{fmt(m.ts)}</p>
                                         </>
                                     ) : (
                                         <>
-                                            <div className="inline-block text-[13.5px] leading-relaxed rounded-2xl rounded-tr-md px-4 py-3 text-left bg-gradient-to-br from-[var(--color-brand-500)] to-[oklch(0.45_0.20_300)] text-white">
+                                            <div className="inline-block text-[13.5px] leading-relaxed rounded-2xl rounded-tr-md px-4 py-3 text-left bg-gradient-to-br from-[var(--color-brand-500)] to-[oklch(0.45_0.20_300)] text-[var(--color-text-primary)]">
                                                 {m.text}
                                             </div>
-                                            <p className="text-[10px] text-white/15 mt-1 text-right">{fmt(m.ts)}</p>
+                                            <p className="text-[10px] text-[var(--overlay-15)] mt-1 text-right">{fmt(m.ts)}</p>
                                         </>
                                     )}
                                 </div>
@@ -458,12 +458,12 @@ export default function ChatPage() {
                                         animate={{ opacity: 1, scale: 1 }}
                                         transition={{ delay: 0.2 + idx * 0.05 }}
                                         onClick={() => send(s.prompt)}
-                                        className={`group flex items-center gap-2 pl-2 pr-3.5 py-1.5 rounded-full border border-white/[0.07] bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/[0.14] transition-all duration-200 ${s.glow}`}
+                                        className={`group flex items-center gap-2 pl-2 pr-3.5 py-1.5 rounded-full border border-white/[0.07] bg-[var(--overlay-2)] hover:bg-[var(--overlay-5)] hover:border-[var(--overlay-15)] transition-all duration-200 ${s.glow}`}
                                     >
                                         <div className={`w-6 h-6 rounded-full bg-gradient-to-br ${s.accent} flex items-center justify-center opacity-70 group-hover:opacity-100 transition-opacity`}>
-                                            <s.icon className="w-3 h-3 text-white" />
+                                            <s.icon className="w-3 h-3 text-[var(--color-text-primary)]" />
                                         </div>
-                                        <span className="text-[12px] text-white/40 group-hover:text-white/75 transition-colors whitespace-nowrap">
+                                        <span className="text-[12px] text-[var(--overlay-40)] group-hover:text-[var(--overlay-70)] transition-colors whitespace-nowrap">
                                             {s.label}
                                         </span>
                                     </motion.button>
@@ -478,7 +478,7 @@ export default function ChatPage() {
                 {/* Input Area — floating, no bg */}
                 <div className="shrink-0 px-5 sm:px-8 pb-4 pt-2 -mt-28 relative z-10" style={{ background: 'linear-gradient(to top, var(--color-bg-primary) 60%, transparent)' }}>
                     <form onSubmit={handleSubmit} className="max-w-3xl mx-auto">
-                        <div className="rounded-2xl border border-white/[0.08] bg-[oklch(0.10_0.01_280)] backdrop-blur-xl overflow-hidden">
+                        <div className="rounded-2xl border border-[var(--overlay-8)] bg-[oklch(0.10_0.01_280)] backdrop-blur-xl overflow-hidden">
                             {/* Textarea row */}
                             <div className="px-4 pt-3 pb-1">
                                 <textarea
@@ -488,7 +488,7 @@ export default function ChatPage() {
                                     onKeyDown={handleKeyDown}
                                     placeholder="Reply…"
                                     rows={1}
-                                    className="w-full bg-transparent text-[14px] text-white placeholder:text-white/25 resize-none max-h-40 leading-relaxed"
+                                    className="w-full bg-transparent text-[14px] text-[var(--color-text-primary)] placeholder:text-[var(--overlay-25)] resize-none max-h-40 leading-relaxed"
                                     style={{ minHeight: "24px", outline: "none", boxShadow: "none" }}
                                 />
                             </div>
@@ -497,7 +497,7 @@ export default function ChatPage() {
                             <div className="flex items-center justify-between px-3 py-2">
                                 <button
                                     type="button"
-                                    className="w-8 h-8 rounded-lg flex items-center justify-center text-white/25 hover:text-white/50 hover:bg-white/[0.04] transition-all"
+                                    className="w-8 h-8 rounded-lg flex items-center justify-center text-[var(--overlay-25)] hover:text-[var(--overlay-50)] hover:bg-[var(--overlay-4)] transition-all"
                                     aria-label="Attach file"
                                 >
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -507,7 +507,7 @@ export default function ChatPage() {
                                 </button>
 
                                 <div className="flex items-center gap-2">
-                                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] text-white/30 hover:bg-white/[0.04] cursor-default transition-colors select-none">
+                                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] text-[var(--overlay-30)] hover:bg-[var(--overlay-4)] cursor-default transition-colors select-none">
                                         Nova 1.0
                                         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-40">
                                             <polyline points="6 9 12 15 18 9" />
@@ -516,11 +516,11 @@ export default function ChatPage() {
                                     <button
                                         type="submit"
                                         disabled={!input.trim() || typing}
-                                        className="w-8 h-8 rounded-full flex items-center justify-center text-white transition-all disabled:opacity-20 disabled:cursor-not-allowed active:scale-90 shrink-0"
+                                        className="w-8 h-8 rounded-full flex items-center justify-center text-[var(--color-text-primary)] transition-all disabled:opacity-20 disabled:cursor-not-allowed active:scale-90 shrink-0"
                                         style={{
                                             background: input.trim()
                                                 ? "linear-gradient(135deg, oklch(0.50 0.25 285), oklch(0.60 0.18 220))"
-                                                : "rgba(255,255,255,0.08)",
+                                                : "var(--overlay-8)",
                                         }}
                                     >
                                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -532,7 +532,7 @@ export default function ChatPage() {
                             </div>
                         </div>
 
-                        <p className="text-[10px] text-white/15 text-center mt-2">
+                        <p className="text-[10px] text-[var(--overlay-15)] text-center mt-2">
                             Nova is AI and can make mistakes. Please double-check responses.
                         </p>
                     </form>

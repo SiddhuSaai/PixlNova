@@ -73,7 +73,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
                     onMouseMove={handleMouse}
                     onMouseLeave={resetMouse}
                     style={{ rotateX, rotateY, transformPerspective: 800 }}
-                    className={`group relative h-full rounded-2xl border border-white/[0.06] overflow-hidden cursor-pointer transition-all duration-500 hover:border-white/[0.15] ${glow}`}
+                    className={`group relative h-full rounded-2xl border border-[var(--overlay-6)] overflow-hidden cursor-pointer transition-all duration-500 hover:border-white/[0.15] ${glow}`}
                 >
                     {/* ── Background image ── */}
                     <div className="absolute inset-0 z-0">
@@ -85,7 +85,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                         />
                         {/* Dark gradient overlay — keeps text readable */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.08_0.01_280)] via-[oklch(0.08_0.01_280)/90%] to-[oklch(0.08_0.01_280)/60%]" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg-primary)] via-[var(--color-bg-primary)/90%] to-[var(--color-bg-primary)/60%]" />
                     </div>
 
                     {/* ── Content ── */}
@@ -93,25 +93,25 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
                         {/* Top: icon + hover arrow */}
                         <div className="flex items-start justify-between mb-5">
                             <div
-                                className="w-11 h-11 rounded-xl flex items-center justify-center border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm group-hover:border-white/[0.18] group-hover:bg-white/[0.06] group-hover:scale-105 transition-all duration-300"
+                                className="w-11 h-11 rounded-xl flex items-center justify-center border border-[var(--overlay-8)] bg-[var(--overlay-4)] backdrop-blur-sm group-hover:border-white/[0.18] group-hover:bg-[var(--overlay-6)] group-hover:scale-105 transition-all duration-300"
                                 style={{ color: service.accentColor }}
                             >
                                 {Icon && <Icon className="w-5 h-5" />}
                             </div>
-                            <div className="w-8 h-8 rounded-full flex items-center justify-center border border-white/[0.06] bg-white/[0.03] backdrop-blur-sm opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                                <ArrowUpRight className="w-3.5 h-3.5 text-white/50" />
+                            <div className="w-8 h-8 rounded-full flex items-center justify-center border border-[var(--overlay-6)] bg-[var(--overlay-3)] backdrop-blur-sm opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                <ArrowUpRight className="w-3.5 h-3.5 text-[var(--overlay-50)]" />
                             </div>
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-[17px] font-bold text-white mb-2 tracking-tight">{service.title}</h3>
+                        <h3 className="text-[17px] font-bold text-[var(--color-text-primary)] mb-2 tracking-tight">{service.title}</h3>
 
                         {/* Tags */}
                         <div className="flex flex-wrap gap-1.5 mb-3">
                             {service.tags.map((tag) => (
                                 <span
                                     key={tag}
-                                    className="px-2 py-0.5 text-[9px] font-medium tracking-wider rounded-full bg-white/[0.05] text-white/25 uppercase backdrop-blur-sm group-hover:text-white/45 group-hover:bg-white/[0.08] transition-colors duration-300"
+                                    className="px-2 py-0.5 text-[9px] font-medium tracking-wider rounded-full bg-[var(--overlay-5)] text-[var(--overlay-25)] uppercase backdrop-blur-sm group-hover:text-[var(--overlay-45)] group-hover:bg-[var(--overlay-8)] transition-colors duration-300"
                                 >
                                     {tag}
                                 </span>
@@ -119,17 +119,17 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
                         </div>
 
                         {/* Description */}
-                        <p className="text-[13px] text-white/30 leading-relaxed mb-auto group-hover:text-white/50 transition-colors duration-300">
+                        <p className="text-[13px] text-[var(--overlay-30)] leading-relaxed mb-auto group-hover:text-[var(--overlay-50)] transition-colors duration-300">
                             {service.description}
                         </p>
 
                         {/* Bottom stats */}
-                        <div className="pt-4 mt-4 border-t border-white/[0.05] group-hover:border-white/[0.10] transition-colors duration-300">
+                        <div className="pt-4 mt-4 border-t border-[var(--overlay-5)] group-hover:border-[var(--overlay-10)] transition-colors duration-300">
                             <div className="flex items-center gap-6">
                                 {service.stats.slice(0, 2).map((s) => (
                                     <div key={s.label} className="flex flex-col">
-                                        <span className="text-[15px] font-bold text-white/65 group-hover:text-white transition-colors duration-300">{s.value}</span>
-                                        <span className="text-[9px] text-white/20 font-medium uppercase tracking-wider">{s.label}</span>
+                                        <span className="text-[15px] font-bold text-white/65 group-hover:text-[var(--color-text-primary)] transition-colors duration-300">{s.value}</span>
+                                        <span className="text-[9px] text-[var(--overlay-20)] font-medium uppercase tracking-wider">{s.label}</span>
                                     </div>
                                 ))}
                             </div>
@@ -153,14 +153,14 @@ export default function Services() {
                     transition={{ duration: 0.5 }}
                     className="text-center max-w-2xl mx-auto mb-14 sm:mb-16"
                 >
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/[0.06] bg-white/[0.02] mb-6">
-                        <Code2 className="w-3.5 h-3.5 text-white/30" />
-                        <span className="text-[11px] sm:text-[12px] text-white/35 font-medium uppercase tracking-widest">What We Build</span>
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--overlay-6)] bg-[var(--overlay-2)] mb-6">
+                        <Code2 className="w-3.5 h-3.5 text-[var(--overlay-30)]" />
+                        <span className="text-[11px] sm:text-[12px] text-[var(--overlay-35)] font-medium uppercase tracking-widest">What We Build</span>
                     </div>
-                    <h2 className="font-bold text-white" style={{ fontSize: "var(--font-size-h2)" }}>
+                    <h2 className="font-bold text-[var(--color-text-primary)]" style={{ fontSize: "var(--font-size-h2)" }}>
                         Services That <span className="gradient-text">Drive Growth</span>
                     </h2>
-                    <p className="mt-4 text-white/35 text-[15px] sm:text-[17px] leading-relaxed max-w-xl mx-auto">
+                    <p className="mt-4 text-[var(--overlay-35)] text-[15px] sm:text-[17px] leading-relaxed max-w-xl mx-auto">
                         End-to-end digital product development — every pixel engineered for impact.
                     </p>
                 </motion.div>
@@ -180,12 +180,12 @@ export default function Services() {
                     transition={{ delay: 0.3 }}
                     className="text-center mt-12 sm:mt-16"
                 >
-                    <p className="text-[13px] text-white/20 mb-4">
+                    <p className="text-[13px] text-[var(--overlay-20)] mb-4">
                         Not sure what you need? We&apos;ll help you figure it out.
                     </p>
                     <a
                         href="#contact"
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/[0.08] bg-white/[0.02] text-[13px] font-medium text-white/50 hover:text-white hover:border-white/[0.16] hover:bg-white/[0.04] transition-all duration-300"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[var(--overlay-8)] bg-[var(--overlay-2)] text-[13px] font-medium text-[var(--overlay-50)] hover:text-[var(--color-text-primary)] hover:border-[var(--overlay-15)] hover:bg-[var(--overlay-4)] transition-all duration-300"
                     >
                         <Zap className="w-3.5 h-3.5" />
                         Let&apos;s Talk Strategy

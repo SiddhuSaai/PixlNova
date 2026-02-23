@@ -12,7 +12,7 @@ const logos = [
 function LogoItem({ name }: { name: string }) {
     return (
         <div className="flex items-center justify-center px-8 lg:px-12 py-4 shrink-0">
-            <span className="text-xl font-bold text-white/20 hover:text-white/50 transition-colors duration-300 whitespace-nowrap select-none tracking-wide">
+            <span className="text-xl font-bold text-[var(--overlay-20)] hover:text-[var(--overlay-50)] transition-colors duration-300 whitespace-nowrap select-none tracking-wide">
                 {name}
             </span>
         </div>
@@ -26,7 +26,7 @@ export default function LogoCloud() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            className="py-12 lg:py-16 border-y border-white/[0.04] overflow-hidden relative"
+            className="py-12 lg:py-16 border-y border-[var(--overlay-4)] overflow-hidden relative"
         >
             {/* Gradient Edges */}
             <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[var(--color-bg-primary)] to-transparent z-10" />
